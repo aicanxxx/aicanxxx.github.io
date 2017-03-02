@@ -2,98 +2,43 @@
     margin:0;
     padding:0;
 }
-/*圣杯布局*/
-/*.box{
-    margin:20px;
-    padding: 20px 140px 20px 220px;
-    background-color: #eee;
-    overflow: hidden;
-}
-
-.left,.center,.right{
-    float: left;
-    padding: 19px;
-    background-color: white;
-    border:solid 1px #999;
-}
-.left{
-    width:160px;
-    margin-left:-100% ;
-    position: relative;
-    left:-200px;
-}
-.right{
-    width:80px;
-    margin-left:-120px ;
-    position: relative;
-    right:-120px;
-}
-.center{
-    margin: 0 20px;
-}*/
-/*双飞翼布局*/
-/*.box{
-    margin:20px;
-    padding: 20px;
-    background-color: #eee;
-    overflow: hidden;
-}
-.left,.center,.right{
-    float: left;
-    padding: 19px;
-    background-color: white;
-    border:solid 1px #999;
-}
-.center{
-    margin: 0 140px 0 220px;
-}
-.left{
-    width:160px;
-    margin-left:-100% ;
-}
-.right{
-    width:80px;
-    margin-left:-120px ;
-}*/
+/*第一种*/
 .box{
-    margin:20px;
-    padding: 20px;
-    background-color: #eee;
+    width: 400px;
+    height: 200px;
+    background-color: #ccc;
     overflow: hidden;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -200px;
+    margin-top: -100px;
 }
-.left,.center,.right{
-
-    padding: 19px;
-    background-color: white;
-    border:solid 1px #999;
+/*第二种*/
+/*.box{
+    width: 400px;
+    height: 200px;
+    background-color: #ccc;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}*/
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: #fc0;
+    border-radius: 100%;
+    position: absolute;
 }
-.center{
-    margin: 0 140px 0 220px;
-}
-.left{
-    float: left;
-    width:160px;
-}
-.right{
-    float: right;
-    width:80px;
-}
-img{
-    width:80px;
-    height:80px;
-}
-.team_logo{
-    float: left;
-    width: 80px;
-    height:80px;
-    margin-right:15px;
-}
-.left p{
-    float: left;
-}
-.right img{
-    margin-bottom: 10px;
-}
-.right img:last-child{
-    margin-bottom: 0;
+.left-corner{
+    top:-50px;
+    left:-50px;
+ }
+.right-corner{
+    right:-50px;
+    bottom:-50px;
 }
