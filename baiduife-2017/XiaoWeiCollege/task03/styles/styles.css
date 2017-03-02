@@ -7,7 +7,7 @@
     margin:20px;
     padding: 20px 140px 20px 220px;
     background-color: #eee;
-    border:solid 2px #999;
+    border:solid 1px #999;
     overflow: hidden;
 }
 
@@ -37,7 +37,7 @@
     margin:20px;
     padding: 20px;
     background-color: #eee;
-    border:solid 2px #999;
+    border:solid 1px #999;
     overflow: hidden;
 }
 .left,.center,.right{
@@ -61,7 +61,7 @@
     margin:20px;
     padding: 20px;
     background-color: #eee;
-    border:solid 2px #999;
+    border:solid 1px #999;
     overflow: hidden;
 }
 .left,.center,.right{
