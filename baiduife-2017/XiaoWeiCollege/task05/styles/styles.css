@@ -1,0 +1,186 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: #dedede;
+    font-family: "微软雅黑","宋体",sans-serif;
+}
+
+header{
+    width:100%;
+    height:60px;
+    background-color: #333;
+    /*position: relative;*/
+}
+.logo-baidu{
+    height:60px;
+    float: left;
+    margin-left:40px;
+    /*position: absolute;
+    left:40px;*/
+}
+nav{
+    float: right;
+    margin:20px 20px 19px 0px;
+    /*position: absolute;
+    right:20px;
+    top:20px;*/
+
+}
+nav li{
+    list-style: none;
+    float: left;
+    padding-left: 20px;
+}
+nav a{
+    text-decoration: none;
+    color: #f9ffff;
+    font-size: 14px;
+}
+nav a:visited{
+    color: #c7c4cf;
+}
+
+
+.container{
+    margin: 20px 380px 20px 20px;
+    position: relative;
+}
+main{
+    margin-right: 20px;
+}
+article{
+    background-color:#fff ;
+    padding: 20px 20px 30px 20px;
+    margin-bottom:20px;
+    overflow: hidden;
+}
+article h2{
+    color: #000300;
+    font-size:22px;
+    line-height: 50px;
+}
+article h3{
+    color: #646462;
+    font-size:16px;
+    line-height: 30px;
+}
+article span{
+    color: #646462;
+    font-size:14px;
+    line-height: 40px;
+}
+p{
+    font-size:16px;
+    text-indent: 32px;
+    line-height: 150%;
+}
+.img-wrap{
+    display: inline-block;
+    margin: 15px 0;
+}
+.img-wrap img{
+    width:100%;
+}
+
+article ul li{
+    list-style: none;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+figure{
+    width:100px;
+    height: 115px;
+    padding: 10px;
+    border:solid 1px #cbcbcb;
+    margin: 10px;
+    float: left;
+}
+figure img{
+    width: 100px;
+    height:80px;
+}
+figcaption{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+ol li{
+    margin:5px 0 5px 50px;
+}
+section{
+    margin-top: 20px;
+}
+article table{
+    width:100%;
+    border-collapse:collapse;
+    border:solid 1px #ccc;
+
+}
+article td,article th{
+    height:25px;
+    border:solid 1px #ccc;
+    font-size:12px;
+}
+.l-wp{
+    width: 40%;
+    text-align: left;
+    background-color: #333;
+    color: white;
+}
+.s-wp{
+    width: 20%;
+    text-align: left;
+    background-color: #333;
+    color: white;
+}
+.background-grey{
+    background-color: #ccc;
+}
+aside{
+    width: 320px;
+    padding: 20px;
+    background-color: white;
+    position: absolute;
+    right:-360px;
+    top:0;
+}
+
+aside h3{
+    padding: 10px;
+    border-left: solid 3px #ccc;
+    margin-bottom: 10px;
+}
+aside table{
+    margin: 0 auto;
+}
+aside td{
+    padding:5px ;
+    font-size: 12px;
+}
+.align-right{
+    text-align: right;
+}
+.color-grey{
+    color: #abaaaf;
+}
+.submit{
+    width: 100%;
+    height:40px;
+    background-color: #522a5c;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer{
+    width:100%;
+    height:70px;
+    padding-top:20px;
+    text-align: center;
+    background-color: #000;
+    color: white;
+}
