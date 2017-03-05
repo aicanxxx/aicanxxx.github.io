@@ -125,10 +125,104 @@ time{
 }
 .what{
     width: 230px;
+    color: #767777;
+    font-size: 12px;
+    font-family: "宋体","微软雅黑","黑体",sans-serif;
+    line-height: 16px;
 }
 .when{
     width: 206px;
+    color: #231815;
+    font-size: 12px;
+    font-family: "微软雅黑","宋体","黑体",sans-serif;
+    line-height: 16px;
+}
+.when p:last-child{
+    opacity: 0.7;
 }
 .how{
     width:155px;
+    color: #231815;
+    font-size: 12px;
+    font-family: "微软雅黑","宋体","黑体",sans-serif;
+    line-height: 21px;
+}
+.how ul{
+    list-style: none;
+    margin-top: 20px;
+}
+.how span{
+    color: #cd4a48;
+    font-style: italic;
+    opacity: 0.7;
+}
+#what,#when,#how{
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: bold;
+    line-height: 34px;
+    font-family: "微软雅黑","宋体","黑体",sans-serif;
+}
+#what{
+    color: #418c59;
+}
+#when{
+    color: #d2994f;
+}
+#how{
+    color: #cc7680;
+}
+
+.third-part{
+    width: 892px;
+    height:605px;
+    margin-bottom: 40px;
+}
+.part-left{
+    width:414px;
+    height:605px;
+    float: left;
+    margin-right: 20px;
+}
+.part-right{
+    width:458px;
+    height:605px;
+    float: left;
+}
+.title-left{
+    width: 414px;
+    height: 152px;
+    border-bottom: solid 2px #11456c;
+    font-family: "黑体","微软雅黑","宋体",sans-serif;
+    margin-bottom: 30px;
+}
+.font-42px{
+    font-size: 42px;
+    color: #11456b;
+    line-height: 42px;
+    font-weight: bold;
+}
+.font-72px{
+    font-size: 72px;
+    color: #f5e327;
+    font-style: italic;
+    font-weight: bold;
+    padding-right:30px;
+}
+.font-33px{
+    font-size: 33px;
+    color: #11456b;
+    line-height: 55px;
+    font-weight: bold;
+}
+#first-word{
+    float: left;
+    font-size: 70px;
+    color: #f5e327;
+    font-family: "微软雅黑","黑体","宋体",sans-serif;
+    line-height: 70px;
+    padding: 0 10px 10px 0;
+}
+figure{
+    float: right;
 }
