@@ -179,18 +179,13 @@ time{
     margin-bottom: 40px;
 }
 .part-left{
-    width:414px;
+    width:415px;
     height:605px;
     float: left;
-    margin-right: 20px;
-}
-.part-right{
-    width:458px;
-    height:605px;
-    float: left;
+    margin-right: 19px;
 }
 .title-left{
-    width: 414px;
+    width: 415px;
     height: 152px;
     border-bottom: solid 2px #11456c;
     font-family: "黑体","微软雅黑","宋体",sans-serif;
@@ -215,6 +210,12 @@ time{
     line-height: 55px;
     font-weight: bold;
 }
+.context-left p{
+    font-size: 12px;
+    color: #767777;
+    font-family: "宋体","微软雅黑","黑体",sans-serif;
+    line-height: 16px;
+}
 #first-word{
     float: left;
     font-size: 70px;
@@ -225,4 +226,71 @@ time{
 }
 figure{
     float: right;
+    padding: 20px 5px 20px 20px;
+}
+.part-right{
+    width:458px;
+    height:605px;
+    float: left;
+    position: relative;
+}
+.title-right{
+    width: 458px;
+    height:61px;
+    font-family: "微软雅黑","黑体","宋体",sans-serif;
+    background-color: rgba(4,0,0,0.4);
+    position: absolute;
+    top:196px;
+}
+.title-context{
+    width: 415px;
+    height: 44px;
+    margin: 8px 0 9px 40px;
+    padding-left: 15px;
+    border-left: solid 3px #72b16a;
+}
+.font-26px{
+    font-size: 26px;
+    color: #ffffff;
+    line-height: 44px;
+}
+.sub-title{
+    font-size: 12px;
+    color: #72b16a;
+    font-style: italic;
+}
+
+
+.context-right{
+    margin-top: 30px;
+    width: 459px;
+    height: 298px;
+    padding-top: 20px;
+    background-color: #eeeed6;
+}
+.context-right ul{
+    margin: 0 20px 30px 45px;
+}
+.context-right li{
+    list-style: url("../images/up-sign.jpg");
+    color: #5a5b5b;
+    font: 16px  "宋体" ;
+    text-align: justify;
+    padding-top: 20px;
+}
+.context-right li span{
+    font-size: 12px;
+    font-style: italic;
+}
+
+.helloworld{
+    width: 260px;
+    height: 160px;
+    background-color: #d55d5c;
+}
+.zero{
+    float: left;
+    font-size: 110px;
+    color: #ffffff;
+    font-family: "微软雅黑","黑体","宋体",sans-serif;
 }
