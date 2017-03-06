@@ -25,7 +25,8 @@ header{
     height: 61px;
     background-color: #d55d5c;
 }
-.baidu-url p{
+.baidu-url a{
+    text-decoration: none;
     color: #ffffff;
     position: absolute;
     left: 5px;
