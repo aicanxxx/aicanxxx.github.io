@@ -7,9 +7,11 @@
 </head>
 <body>
 <header>
-    <div class="logo">
-        <img src="images/logo.png" alt="new-world">
-        <p>新世界</p>
+    <div class="logo f_left">
+        <figure class="f_left">
+            <img src="images/logo.png" alt="new-world">
+        </figure>
+        <p class="SimHei f_left">新世界</p>
     </div>
     <ul>
         <li><a href="">首页</a></li>
@@ -17,16 +19,18 @@
         <li><a href="">项目介绍</a></li>
         <li><a href="">爱心社区</a></li>
         <li><a href="">关于我们</a></li>
-        <li><a href=""><img src="images/sign-in.png" alt="">登录</a></li>
+        <li id="sign-in"><a href="">登录</a></li>
     </ul>
 </header>
-<div class="banner">
-    <p class="banner-title">Time of new life</p>
-    <p class="banner-text">新时代，年轻的人们让我们一起</p>
-    <p class="banner-text">体验新生活，享受新生活</p>
-    <div class="start-to"><a href="">开始体验</a></div>
+<div class="banner YaHei">
+    <div class="banner-shade">
+        <p class="banner-title">Time of new life</p>
+        <p class="banner-text YaHei-21px">新时代，年轻的人们让我们一起</p>
+        <p class="banner-text YaHei-21px">体验新生活，享受新生活</p>
+        <div class="start-to"><a href="">开始体验</a></div>
+    </div>
 </div>
-<nav>
+<nav class="YaHei">
     <ul>
         <li>
             <img src="images/nav-pic1.png" alt="">
@@ -46,36 +50,38 @@
         </li>
     </ul>
 </nav>
-<div class="new-world-logo">
+<div class="new-world-logo SimHei">
     <figure>
         <img src="images/logo.png" alt="">
         <figcaption>关于新世界，你不知道的还有什么？</figcaption>
     </figure>
 </div>
-<div class="map">
-    <p class="map-title">查找新世界城市活动信息</p>
-    <div class="bottom-border"></div>
-    <p class="map-text">每个城市有不同的活动信息，请自主查询您所需了解的城市</p>
-    <form action="">
-        <input type="text" placeholder="中国">
-        <select name="province" id="province">
-            <option value="beijing">北京市</option>
-            <option value="tianjin">天津市</option>
-            <option value="hebei">河北省</option>
-            <option value="shanxi">陕西省</option>
-            <option value="hubei">湖北省</option>
-            <option value="hunan">湖南省</option>
-        </select>
-        <select name="city" id="city">
-            <option value="beijing">北京</option>
-            <option value="tianjin">天津</option>
-            <option value="wuhan">武汉</option>
-            <option value="xian">西安</option>
-            <option value="changsha">长沙</option>
-            <option value="hefei">合肥</option>
-        </select>
-        <input type="submit" value="搜索">
-    </form>
+<div class="map YaHei">
+    <div class="map-shade">
+        <p class="map-title">查找新世界城市活动信息</p>
+        <div class="bottom-border color-white"></div>
+        <p class="map-text">每个城市有不同的活动信息，请自主查询您所需了解的城市</p>
+        <form action="">
+            <input type="text" placeholder="中国" id="country">
+            <select name="province" id="province">
+                <option value="beijing">北京市</option>
+                <option value="tianjin">天津市</option>
+                <option value="hebei">河北省</option>
+                <option value="shanxi">陕西省</option>
+                <option value="hubei">湖北省</option>
+                <option value="hunan">湖南省</option>
+            </select>
+            <select name="city" id="city">
+                <option value="beijing">北京</option>
+                <option value="tianjin">天津</option>
+                <option value="wuhan">武汉</option>
+                <option value="xian">西安</option>
+                <option value="changsha">长沙</option>
+                <option value="hefei">合肥</option>
+            </select>
+            <input type="submit" value="搜索" id="search">
+        </form>
+    </div>
 </div>
 <div class="activities">
     <ul>
@@ -137,6 +143,79 @@
         </div>
     </div>
 </div>
-<div class="view-more"></div>
+<div class="view-more">
+    <div class="red-bg">
+        <p class="part-text">新时代</p>
+        <p class="part-text">关于爱生活的我们</p>
+        <div class="bottom-border color-white"></div>
+        <div class="look-over"><a href="">查看更多</a></div>
+    </div>
+    <div class="white-bg">
+        <p class="part-text">新时代</p>
+        <p class="part-text">关于爱生活的我们</p>
+        <div class="bottom-border color-grey"></div>
+        <div class="look-over"><a href="">查看更多</a></div>
+    </div>
+    <figure>
+        <img src="images/view-more.png" alt="">
+    </figure>
+</div>
+<div class="join-us">
+    <p class="title">成为我们的志愿者</p>
+    <div class="bottom-border color-red"></div>
+    <p>新世界的大家庭需要每一个爱生活的人的加入，如果你够年轻，有梦想，有激情 那就不要犹豫，快来加入我们，成为改变所有人生活的人 </p>
+    <div class="branch-left">
+        <div class="agreement">
+            <h4>新世界自愿者协议</h4>
+            <p>加入新世界志愿者的人员必须遵守中华人民共共和国的 相关法律法规，并且本着平等资源的原则 ...... </p>
+            <p class="more"><a href="">more</a></p>
+        </div>
+        <div class="agreement">
+            <h4>新世界自愿者权利</h4>
+            <p>加入新世界志愿者的人员必须遵守中华人民共共和国的 相关法律法规，并且本着平等资源的原则 </p>
+            <p class="more"><a href="">more</a></p>
+        </div>
+        <div class="agreement">
+            <h4>更多条款</h4>
+            <p class="more"><a href="">more</a></p>
+        </div>
+    </div>
+    <div class="branch-right">
+        <form>
+            <table>
+                <tr>
+                    <td >姓名：<input type="text" name="username"></td>
+                    <td>姓名：<input type="text" name="age"></td>
+                </tr>
+                <tr>
+                    <td>联系方式：<input type="text" name="tel"></td>
+                    <td >联系地址：<input type="text" name="address"></td>
+                </tr>
+                <tr>
+                    <td ><textarea name="describe" rows="8" cols="20" placeholder="请简单描述您梦想的生活："></textarea></td>
+                </tr>
+                <input type="button" name="button" value="提交申请" class="submit">
+            </table>
+        </form>
+    </div>
+</div>
+<div class="contact-us">
+    <p class="title">联系我们</p>
+    <p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯 也可以通过以下任何方式关注我们动态</p>
+    <form action="">
+        <input type="text" placeholder="985568626@qq.com">
+        <input type="submit" value="提交">
+    </form>
+    <ul>
+        <li><a href=""><img src="images/contactus-button1.png" alt=""></a></li>
+        <li><a href=""><img src="images/contactus-button2.png" alt=""></a></li>
+        <li><a href=""><img src="images/contactus-button3.png" alt=""></a></li>
+        <li><a href=""><img src="images/contactus-button4.png" alt=""></a></li>
+    </ul>
+</div>
+<footer>
+    <span>@2016新世界</span>
+    <a href="#">Back to top</a>
+</footer>
 </body>
 </html>
