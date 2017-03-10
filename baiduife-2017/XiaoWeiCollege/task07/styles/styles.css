@@ -173,16 +173,45 @@ form{
 }
 #country{
     width: 215px;
-    height: 16px;
+    height: 15px;
     border: none;
     margin-right: 30px;
     padding: 10px;
     background: #fff url("../images/map-button.png") no-repeat 207px 8px;
 }
-input,select{
-
-
+#search{
+    height: 35px;
+    border: none;
+    margin-right: 30px;
+    background-color: #be4e48;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 25px;
+    padding: 0 66px 0 91px;
 }
+.selects{
+    width: 235px;
+    height: 36px;
+    padding: 5px 10px;
+    margin-right: 30px;
+    border: solid 1px #bf4f49;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: #fff url("../images/map-button.png") no-repeat 207px center;
+    /*对被选中和隐藏的值设置字体大小和颜色*/
+    color: #a8aaaa;
+    font-size: 12px;
+}
+.selects option{
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    width: 235px;
+    height: 40px;
+    color: #323333;
+    line-height:25px;
+    background-color: #e3e2e4;
+}
+
 
 
 

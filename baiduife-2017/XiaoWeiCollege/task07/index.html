@@ -63,15 +63,17 @@
         <p class="map-text">每个城市有不同的活动信息，请自主查询您所需了解的城市</p>
         <form action="">
             <input type="text" placeholder="中国" id="country">
-            <select name="province" id="province">
-                <option value="beijing">北京市</option>
+            <select name="province" class="selects" >
+                <option value="options" disabled selected hidden>省份</option>
+                <option value="beijing" id="slected">北京市</option>
                 <option value="tianjin">天津市</option>
                 <option value="hebei">河北省</option>
                 <option value="shanxi">陕西省</option>
                 <option value="hubei">湖北省</option>
                 <option value="hunan">湖南省</option>
             </select>
-            <select name="city" id="city">
+            <select name="city" class="selects">
+                <option value="options" disabled selected hidden>城市</option>
                 <option value="beijing">北京</option>
                 <option value="tianjin">天津</option>
                 <option value="wuhan">武汉</option>
