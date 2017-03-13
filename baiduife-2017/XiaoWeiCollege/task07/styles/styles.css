@@ -11,6 +11,9 @@ body{
 .YaHei{
     font-family: "微软雅黑","黑体",  "宋体", sans-serif;
 }
+.SimSun{
+    font-family: "宋体","微软雅黑","黑体", sans-serif;
+}
 .bottom-border{
     width: 30px;
     height: 2px;
@@ -134,7 +137,7 @@ nav p{
 .new-world-logo figure{
     padding-top:90px;
 }
-figcaption{
+.new-world-logo figcaption{
     font-size: 54px;
     color: #a1a1a1;
     line-height: 135px;
@@ -214,4 +217,134 @@ form{
 
 
 
+.activities{
+    height: 605px;
+    background-color: #f7f7f7;
+}
+.activities img{
+    padding: 10px 10px;
+    border: solid 1px #e0e0e0;
+    border-bottom: none;
+    background-color: #ffffff;
+}
+#img-shanghai{
+    border: solid 1px #e0e0e0;
+}
+.activities ul{
+    padding: 100px 150px 115px 150px;
+}
+.activities figure{
+    height: 390px;
+    text-align: center;
+}
+.activities-title{
+    font-size: 15px;
+    color: #323333;
+    line-height: 35px;
+}
+.activities-subtitle{
+    font-size: 12px;
+    color: #a1a1a1;
+    line-height: 25px;
+}
+.activities-shanghai{
+    font-size: 20px;
+    color: #323333;
+    font-weight: 500;
+    letter-spacing: 41px;
+    margin-left: 41px;
+    line-height: 32px;
+}
+.m-right{
+    margin-right: 29px;
+}
 
+
+
+.activity-img{
+    width: 850px;
+    padding: 115px 0 144px 0;
+    text-align: center;
+    color: #fff;
+    background: url("../images/activity-beijing.png") no-repeat top left;
+}
+.bigger{
+    font-size: 50px;
+    line-height: 76px;
+}
+.biggest{
+    font-size: 158px;
+    line-height: 114px;
+    padding-bottom: 30px;
+}
+#organizers,.activity-img time{
+    font-size: 22px;
+    line-height: 43px;
+}
+.activity-intro{
+    width: 290px;
+    padding: 160px 70px 128px 70px;
+
+}
+.activity-intro-title{
+    font-size: 22px;
+    color: #323333;
+    padding-bottom: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+.activity-intro-title span{
+    color: #e8504e;
+}
+.activity-intro-text{
+    font-size: 12px;
+    color: #aaa;
+    line-height: 30px;
+    text-indent: 24px;
+}
+.more-details{
+    padding-top: 35px;
+    text-align: center;
+}
+.more-details p{
+    width: 105px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    border: solid 1px #e25c60;
+}
+.more-details a{
+    font-size: 12px;
+    color: #e25c60;
+}
+.more-details ul{
+    margin: 0 106px;
+}
+.more-details li{
+    width: 8px;
+    height: 8px;
+    border: solid 1px #919292;
+    border-radius: 9px;
+    margin: 30px 8px 0 8px;
+}
+.selected{
+    background-color: #919292;
+}
+.more-details li:hover{
+    background-color: #919292;
+}
+
+
+.view-more{
+    height:520px;
+}
+.red-bg,.white-bg{
+    width: 425px;
+    height: 520px;
+}
+.red-bg{
+    background-color: #e25c60;
+}
+.white-bg{
+    background-color: #fff;
+}
