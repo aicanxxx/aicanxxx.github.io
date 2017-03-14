@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -217,15 +218,10 @@ nav p{
     font-size: 12px;
 }
 .selects option{
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    width: 235px;
-    height: 40px;
     color: #323333;
     line-height:25px;
     background-color: #e3e2e4;
 }
-
 
 
 .activities{
@@ -277,13 +273,16 @@ nav p{
 
 .activity-beijing{
     height: 565px;
-    background: url("../images/activity-beijing.png") no-repeat top left;
 }
 .activity-img{
-    width: 850px;
+    width: 66%;
     padding: 115px 0 144px 0;
     text-align: center;
     color: #fff;
+    background: url("../images/activity-beijing.png") no-repeat top left;
+    background-size: 100% 100%;
+}
+.left-arrow{
     background: url("../images/left-arrow.png") no-repeat center right;
 }
 .bigger{
@@ -300,9 +299,12 @@ nav p{
     line-height: 43px;
 }
 .activity-intro{
+    width: 34%;
+}
+.intro-main{
     width: 290px;
-    padding: 160px 70px 128px 70px;
-
+    height: 277px;
+    margin: 160px auto 128px auto;
 }
 .activity-intro-title{
     font-size: 22px;
@@ -357,7 +359,7 @@ nav p{
     height:520px;
 }
 .red-bg,.white-bg{
-    width: 425px;
+    width: 33%;
     height: 150px;
     text-align: center;
     padding: 170px 0 200px 0;
@@ -397,23 +399,25 @@ nav p{
     background-color: #aaa;
 }
 .img-bg{
-    width: 430px;
+    width: 34%;
     height: 520px;
-    background: url("../images/view-more.png") no-repeat;
+    background: url("../images/view-more.png") no-repeat top left;
+    background-size: 100% 100%;
 }
 .img-shade{
-    width: 430px;
+    width: 100%;
     height: 520px;
     background: rgba(4,0,0,0.4) url("../images/right-arrow.png") no-repeat center left;
-
 }
 
 
 
 .join-us{
-    height: 750px;
+    width: 1010px;
+    height: 475px;
     text-align: center;
-    padding: 110px 135px 165px 135px;
+    padding: 110px 0 165px 0;
+    margin: 0 auto;
 }
 .join-us-title{
     font-size: 21px;
@@ -481,40 +485,36 @@ nav p{
 }
 .information input{
     width: 210px;
-    border: none;
     background-color: #ededee;
 }
 .no_margin{
     margin-right: 0;
 }
-textarea{
-    height: 120px;
+.describe textarea{
+    width:600px;
+    height: 100px;
     background-color: #ededee;
     padding: 10px 20px;
     border:none;
+    margin-bottom: 15px;
 }
 textarea::-webkit-input-placeholder{
     color:#231815;
-    opacity: 0.8;
-    font-family: "华文仿宋", "微软雅黑", "黑体", sans-serif;
+    opacity: 0.6;
 }
-/*.branch-right table{
-    width: 680px;
-    border-collapse: separate;
-    border-spacing: 20px;
+.submit{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #ededee;
 }
-.branch-right td{
-    height: 20px;
-    padding: 10px 20px;
-
-
+.submit input{
+    color: #323333;
+    font-size: 14px;
+    background-color: #ededee;
 }
-.branch-right input{
 
-}
-.branch-right textarea{
-
-}*/
 
 
 .contact-us{
