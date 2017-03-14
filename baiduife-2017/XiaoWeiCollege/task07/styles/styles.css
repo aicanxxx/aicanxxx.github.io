@@ -29,9 +29,15 @@ li{
     float: left;
     list-style: none;
 }
+input{
+    border:none;
+}
+
+
 
 
 header{
+    min-width: 1280px;
     height:60px;
 }
 .logo{
@@ -112,21 +118,28 @@ nav{
     height: 250px;
 }
 nav li{
-    width: 320px;
+    width: 25%;
     text-align: center;
 }
 nav img{
     padding: 45px 0;
 }
+.nav-text{
+    height: 50px;
+    border-right: solid 2px #989999;
+}
 nav p{
     width: 160px;
-    height: 50px;
     font-size: 14px;
     color: #767777;
     line-height: 18px;
-    border-right: solid 2px #989999;
-    padding: 0 79px;
+    padding: 7px;
+    margin: 0 auto;
 }
+.no-border{
+    border-right: none;
+}
+
 
 
 .new-world-logo{
@@ -171,20 +184,18 @@ nav p{
     opacity: 0.8;
     padding-bottom: 30px;
 }
-form{
+.map form{
     height: 36px;
 }
 #country{
     width: 215px;
     height: 15px;
-    border: none;
     margin-right: 30px;
     padding: 10px;
     background: #fff url("../images/map-button.png") no-repeat 207px 8px;
 }
 #search{
     height: 35px;
-    border: none;
     margin-right: 30px;
     background-color: #be4e48;
     color: #fff;
@@ -231,11 +242,15 @@ form{
     border: solid 1px #e0e0e0;
 }
 .activities ul{
-    padding: 100px 150px 115px 150px;
+    width: 996px;
+    padding: 100px 0px 115px 0px;
+    margin: 0 auto;
 }
 .activities figure{
+    width: 222px;
     height: 390px;
     text-align: center;
+    margin-right: 36px;
 }
 .activities-title{
     font-size: 15px;
@@ -250,14 +265,14 @@ form{
 .activities-shanghai{
     font-size: 20px;
     color: #323333;
-    font-weight: 500;
-    letter-spacing: 41px;
-    margin-left: 41px;
+    letter-spacing: 30px;
+    padding-left:20px;
     line-height: 32px;
 }
-.m-right{
-    margin-right: 29px;
+#no_margin{
+    margin-right: 0;
 }
+
 
 
 .activity-beijing{
@@ -396,10 +411,11 @@ form{
 
 
 .join-us{
+    height: 750px;
     text-align: center;
-    padding: 110px 115px 165px 135px;
+    padding: 110px 135px 165px 135px;
 }
-.title{
+.join-us-title{
     font-size: 21px;
     color: #323333;
     line-height: 40px;
@@ -407,7 +423,7 @@ form{
 .color-red{
     background-color: #e74f4d;
 }
-.subtitle{
+.join-us-subtitle{
     width: 435px;
     font-size: 12px;
     color: #aaa;
@@ -447,7 +463,7 @@ form{
     opacity: 0.6;
 }
 .branch-right{
-    width: 660px;
+    width: 640px;
     color: #231815;
     text-align: left;
     font-size: 12px;
@@ -468,7 +484,18 @@ form{
     border: none;
     background-color: #ededee;
 }
-.describe::-webkit-input-placeholder{
+.no_margin{
+    margin-right: 0;
+}
+textarea{
+    height: 120px;
+    background-color: #ededee;
+    padding: 10px 20px;
+    border:none;
+}
+textarea::-webkit-input-placeholder{
+    color:#231815;
+    opacity: 0.8;
     font-family: "华文仿宋", "微软雅黑", "黑体", sans-serif;
 }
 /*.branch-right table{
@@ -488,3 +515,73 @@ form{
 .branch-right textarea{
 
 }*/
+
+
+.contact-us{
+    width: 100%;
+    padding: 82px 0 70px 0;
+    text-align: center;
+    background-color: #32353e;
+}
+.contact-us-title{
+    font-size: 21px;
+    color: #fff;
+    line-height: 40px;
+}
+.contact-us-subtitle{
+    width: 470px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 18px;
+    margin: 0 auto;
+    opacity: 0.3;
+}
+.contact-us form{
+    width: 510px;
+    height: 40px;
+    font-size: 0;
+    margin: 30px auto;
+}
+
+.input-text{
+    width:410px;
+    height: 12px;
+    padding: 14px 10px;
+    font-size: 14px;
+}
+.input-button{
+    width:80px;
+    font-size: 15px;
+    color: #fff;
+    padding: 10px 20px;
+    letter-spacing: 10px;
+    background-color: #707278;
+}
+.contact-us ul{
+    width: 240px;
+    height: 32px;
+    margin: 0 auto;
+}
+.contact-us li{
+    padding: 0 15px;
+}
+
+
+footer{
+    height: 60px;
+    background-color: #303039;
+    padding: 0 40px 0 100px;
+    line-height: 60px;
+}
+footer span{
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    color: #fff;
+}
+footer a{
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    color: #fff;
+}
