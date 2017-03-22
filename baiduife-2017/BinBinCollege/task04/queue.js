@@ -17,10 +17,9 @@ function addClick(eleId,func){
     if(!document.getElementById)return false;
     var id=document.getElementById(eleId);
     id.onclick=func;
-
 }
 function checkNumber(theObj) {
-    var reg = /^[0-9]+.?[0-9]*$/;
+    var reg =/^(0|[1-9]+.?[0-9]*)$/ ;
     if(reg.test(theObj)) {
         return true;
     }
@@ -31,24 +30,32 @@ function newLiNode(){
     var input=document.getElementById('input');
     var list=document.createElement('li');
     if(!checkNumber(input.value)){
-        alert('输入有问题，请正确输入数字');
-        return false;
+        alert('输入有问题，请输入正确的数');
+        return null;
     }else{
         list.innerHTML=input.value;
         list.setAttribute('class','queueEle');
+        list.onclick=function(){
+            this.parentNode.removeChild(this);
+            alert(this.innerHTML);
+        };
         return list;
     }
 }
 function leftIn(){
     var queue=document.getElementById('queue');
     var eleNode=newLiNode();
-    queue.insertBefore(eleNode,queue.firstChild);
+    if(eleNode!=null){
+        queue.insertBefore(eleNode,queue.firstChild);
+    }
 }
 
 function rightIn(){
     var queue=document.getElementById('queue');
     var eleNode=newLiNode();
-    queue.appendChild(eleNode);
+    if(eleNode!=null) {
+        queue.appendChild(eleNode);
+    }
 }
 function leftOut(){
     var queue=document.getElementById('queue');
@@ -75,17 +82,8 @@ function btnAddClick(){
     addClick('btn3',leftOut);
     addClick('btn4',rightOut);
 }
-function liAddClick(){
-    var li=document.getElementsByClassName('queueEle');
-    li.onclick=function(){
-        var data=this.innerHTML;
-        this.parentNode.removeChild(this);
-        alert(data);
-    }
-}
-//btnAddClick();
+
 addLoadEvent(btnAddClick);
-addLoadEvent(liAddClick);
 
 
 
