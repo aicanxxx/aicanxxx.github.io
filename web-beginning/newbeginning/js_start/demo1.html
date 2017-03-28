@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奇数偶数之和1-100</title>
+
+</head>
+<body>
+    <script type="text/javascript">
+        var sum_odd=0,sum_even=0;
+        for(var i=1;i<=100;i++)
+        {
+            if(i%2==1)
+            {
+                //document.write('奇数为：'+i+'<br/>');
+                sum_odd +=i;
+            }
+        }
+        for(var i=1;i<=100;i++)
+        {
+        if(i%2==0)
+            {
+                //document.write('偶数为：'+i+'<br/>');
+                sum_even +=i;
+            }
+        }
+        document.write('100以内偶数之和为：'+sum_even+'<br/>'+'100以内奇数和为：'+sum_odd+'<br/>');
+        //倒置的99乘法表
+        document.write("<table border='1'>");
+        for(i=1;i<=9;i++)
+        {
+            document.write('<tr>');
+                for(var j=1;j<=i;j++)
+                {
+                    document.write('<td>'+i+'x'+j+'='+i*j+'</td>');
+                }
+            document.write('</tr>');
+        }
+        document.write('</table');
+    </script>
+</body>
+</html>

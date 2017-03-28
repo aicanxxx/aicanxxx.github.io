@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div id="div1">div1</div>
+<body>
+<script type="text/javascript">
+
+
+    document.getElementById('div1').onclick = function(){
+        console.log(this); //div1
+        function func(){
+            console.log(this); //undefined
+        }
+        func()
+    };
+    func();
+
+
+    /* function f(param){
+        var n=function(){
+            alert(3);
+            return param;
+        }
+        param++;
+        return n;
+    }
+    var test=f(12);
+    alert(test());
+    function f1(){
+        var n=1;
+         test=function(){
+            alert(3);
+            n+=1;
+        };
+        function f2(){
+            alert(n);
+        }
+        return f2;
+    }
+    var res=f1();
+    alert(res());
+    test();
+    alert(res());
+    function test(x){
+        var i=0;
+        return function(){
+            alert(i);
+            return x[i++];
+        };
+    }
+    var next=test(['a','b','c','d']);
+    alert(next());alert(next());alert(next());alert(next());alert(next());
+    var foo=1;
+    function main(){
+        alert(foo);
+        var foo=2;
+        alert(this.foo);
+        this.foo=3;
+    }
+    main();
+    new main();
+
+
+    var length=10;
+    function fn(){
+        alert(this.length);
+    }
+    var obj={
+        length:5,
+        method:function(fn){
+            fn();
+            arguments[0]();
+        }}
+    obj.method(fn);
+    a=3;
+    a.prop=4;
+    alert(a+a.prop);
+    var scope='global';
+    function myFunc(){
+        alert(scope);
+        var scope='local'
+    }
+    myFunc();
+eval("a=1,b=2,alert(a+b)");*/
+    /*var obj=new Object();
+    Object.prototype.name="value";
+    console.log(obj.name);
+var obj1=new function (){
+    this.name="value";
+};
+    console.log(obj1.name);
+    console.log(false===0);
+    var str="abcdefgdafoadfjladsf";
+    var strmp=str.split('f');
+    var a=strmp[4]+"5*10"+5*10;
+    var b=strmp[5]+5*10;
+    var c=strmp[5]+"5*10"+5*10;
+    console.log(a,b,c);
+    console.log(strmp);
+    var x=3;
+    var foo={
+        x:2,
+        bar:function(){
+            return this.x;
+        },
+        baz:{
+            x:1,
+            bar:function(){
+                return this.x;
+            }
+        }
+    };
+    var go=foo.baz.bar;
+    console.log(go(),foo.baz.bar());*/
+
+</script>
+
+</body>
+</html>

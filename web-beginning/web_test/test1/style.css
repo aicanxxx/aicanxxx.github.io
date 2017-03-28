@@ -1,0 +1,256 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.wp{
+    width:960px;
+    margin:0 auto;}
+.f_left{
+    float: left;}
+.f_right{
+    float: right;}
+.f_clear{
+    clear: both;}
+body{
+    font:12px/24px "微软雅黑","宋体","arial";}
+img{
+    border:none;}
+/*top栏*/
+.top{
+    width: 100%;
+    height: 24px;
+    background-color: #303030;
+ }
+.left span{
+    margin-right:15px;}
+.right span{
+    margin-left:15px;}
+.top a{
+    color: #ccd0d1;
+    text-decoration: none}
+.top a:hover{
+    color: #f60;}
+
+/*logo与搜索*/
+.logos{
+    margin-top: 20px;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 20px;}
+.logo{
+    width: 280px;
+    height: 70px;
+}
+.sous{
+    width:320px;
+    height: 60px;
+    margin: 5px 0;}
+.s_c{
+    height:60px;
+    width:200px;
+    background: #fefefe url(images/s_c.jpg) repeat-x;}
+.s_c input{
+    width:200px;
+    height: 50px;
+    line-height: 60px;
+    border: none;
+    margin-top: 4px;}
+.s_r{
+    width:108px;
+    height: 60px;
+    background: url("images/s_r.jpg") no-repeat;}
+.s_r button{
+    width:108px;
+    height: 60px;
+    border: none;
+    background: none;
+    cursor: pointer;}
+.tel{
+    height: 34px;
+    line-height: 34px;
+    font-size: 26px;
+    color: darkred;
+    margin: 20px 0 20px 15px;}
+.nav{
+    width:100%;
+    height: 57px;
+    background: url("images/nav_bg.jpg") repeat-x;
+    overflow: hidden;
+    }
+.nav li{
+    float:left;
+    list-style:none;
+    padding: 0 20px;
+    line-height: 57px;}
+.first,.nav li:hover{/*li:hover代表着鼠标放到li上时的背景变化*/
+    background:url("images/nav_hover.jpg") repeat-x}
+.nav a{
+    text-decoration: none;
+    color:#efeaee;
+    font-size: 20px;}
+
+/*中间部分*/
+.ad{
+    width: 960px;
+    height: 210px;
+    margin-top: 0px;
+    margin-bottom: 20px;}
+.ad img{ }
+.title{
+    padding-bottom: 10px;
+    border-bottom: 1px solid red;
+    position: relative;
+    margin-bottom: 10px;
+}
+.title span{
+    font-size:20px;
+    color: red;
+    position:absolute;
+    bottom: 0;right: 0;}
+.title a{
+    text-decoration: none;
+    color: red;
+}
+.title a:hover{color: #888}
+.jianjie{
+    width:540px;
+    height: 370px;
+}
+.jj_c img,.news_c img{
+    float: left;
+    margin: 0 10px 10px 0;}
+.jj_c p,.c_top p{
+    text-indent: 25px;
+    color:#706e73;}
+.xinwen{
+    width:400px;
+    height: 370px;}
+.news_c a:hover{
+    color:#f60;}
+.c_top{
+     width:400px;
+     height: 72px;
+    margin-bottom: 10px;}
+.c_top a{
+    text-decoration: none;
+    font-size: 14px;
+    color:#706e73;}
+.c_bottom li{
+    padding-left: 20px;
+    list-style: none;
+    background: url("images/list_bg.jpg") no-repeat center left;
+    position: relative;
+    margin: 6px 0;
+    }
+.c_bottom a{
+    color: #706e73;
+    text-decoration: none;}
+.c_bottom span{
+    position: absolute;
+    right:0;
+    bottom: 0;
+}
+
+.chanpin{
+    width: 100%;
+    height: 300px;}
+.chanpin_c li{
+    list-style: none;
+    float: left;
+    margin:0 10px 10px 0;
+    width: 151px;
+    height: 96px;
+    overflow: hidden;
+    position: relative;
+}
+.chanpin_c span{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:131px;
+    height:24px;
+    padding:0 10px;
+    color: white;
+    background-color: darkred;
+}
+.chanpin_c li:hover span{
+    display: block;
+}
+.chanpin_c .mr_0{
+    margin-right: 0;
+}
+
+.footer{
+    width:100%;
+    height:100px;}
+.banquan{
+    width:100%;
+    height:76px;
+    line-height: 76px;
+    color:#efeaee;
+    background-color: darkred;
+}
+.footer_l li{
+    list-style: none;
+    float:left;
+    font-size: 16px;
+    margin:0 10px 0px 0;
+}
+.footer_l a{
+    text-decoration: none;
+    color:#fefefe;
+}
+.footer_l span{
+    margin-left: 10px;
+}
+.footer_l a:hover{
+    color: #f60;}
+.footer_r{
+    font-size: 10px;
+}
+.lianjie{
+    width: 100%;
+    height: 24px;
+    color:#f60;
+    background-color: #303030;}
+.lianjie a{
+    color:#888;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.lianjie a:hover{
+    color: #f60;}
+.kjj{
+    position: fixed;
+    bottom: 150px;
+    right: 80px;
+}
+.kjj li{
+    width:58px;
+    height:58px;
+    overflow: hidden;
+    list-style: none;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+.kjj a{
+    display: block;
+    width:58px;
+    height:58px;
+    line-height: 9999px;
+    overflow: hidden;
+    background: url("images/top_tool.jpg") no-repeat;
+}
+a .dingbu{
+    background-position: 0 0;
+}
+a.xlwb{
+    background-position: 0 -75px;
+}
+a.rrw{
+    background-position: 0 -155px;
+}
+a.wx{
+    background-position: 0 -230px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间DATE</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*根据给定时间计算与本月第一天0点的时间间隔，并显示‘差了一分钟以内’，‘差了N分钟’，
+    ‘差了N小时’，‘差了N天’，‘差了N个月’，超过十个月，显示‘差了太久’*/
+    var firstdate = new Date();
+    var year = firstdate.getFullYear();
+    var month = firstdate.getMonth() + 1;
+    firstdate.setDate(1);
+    firstdate.setHours(0);
+    firstdate.setMinutes(0);
+    firstdate.setSeconds(0);
+    firstdate.setMilliseconds(0);
+    document.write('本月第一天为'+firstdate+'<br/>');
+    var firstdate_ms=Date.parse(firstdate);
+    var oneminute=1000*60;
+    var onehour=oneminute*60;
+    var oneday=onehour*24;
+    var onemonth=oneday*30;
+    document.write('给定时间：以年-月-日 形式'+'<br/>');
+    var time=Date.parse(prompt());
+    alert(time);
+    var timeInv=Math.abs(time-firstdate_ms);
+    if(timeInv/onemonth>10){
+        document.write('差了太久'+'\n');
+    }else if(timeInv/onemonth>=1&&timeInv/onemonth<=10){
+        document.write('差了'+parseInt(timeInv/onemonth)+'个月'+'<br/>');
+    }else if(timeInv/oneday>=1&&timeInv/onemonth<1){
+        document.write('差了'+parseInt(timeInv/oneday)+'天'+'<br/>');
+    }else if(timeInv/onehour>=1&&timeInv/oneday<1){
+        document.write('差了'+parseInt(timeInv/onehour)+'小时'+'<br/>');
+    }else if(timeInv/oneminute>=1&&timeInv/onehour<1){
+        document.write('差了'+parseInt(timeInv/oneminute)+'分钟'+'<br/>');
+    }
+    else if(timeInv/oneminute<1){
+        document.write('差了一分钟以内'+'<br/>');
+    }
+
+</script>
+</body>
+</html>

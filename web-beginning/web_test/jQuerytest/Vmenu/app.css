@@ -1,0 +1,42 @@
+ul{
+    padding: 0;/*--覆盖子菜单缩进(IE不支持)*/
+    margin:0;/*--覆盖子菜单缩进(IE)*/
+}
+li{
+    list-style: none;
+    display: block;
+}
+.menu,.hmenu{
+    background: url(bg.jpg),repeat-x;
+    width:100px;
+    margin-bottom: 3px;
+}
+.menu li,.hmenu li{
+    background-image: none;
+    background-color: grey;
+}
+a{
+    text-decoration: none;
+    padding-left:20px;
+    padding-top:3px;
+    padding-bottom: 3px;
+}
+.menu a,.hmenu a{
+    /*background:url(collapsed.jpg),no-repeat;*/
+    background-image: url(collapsed.jpg);
+    background-repeat: no-repeat;
+    color: #eeeeff;
+    background-position: 3px center;
+}
+
+.menu li a,.hmenu li a{
+    color:black;
+    background-image: none;
+}
+.menu ul,.hmenu ul{
+    display: none;
+}
+.hmenu{
+    float: left;
+    margin-right: 3px;
+}

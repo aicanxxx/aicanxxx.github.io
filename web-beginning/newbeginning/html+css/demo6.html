@@ -1,0 +1,39 @@
+﻿<html>
+	<head>
+		<title>用table设置网页表格</title>
+	</head>
+	<body topmargin="0">
+		<table style="text-align:center;font-size:25px" align="center" width="100%" cellspacing="0" cellpadding="0">
+			<tr style="background:red;color:white" height="90">
+				<td>网页的头部</td>				
+			</tr><!--第一行-->
+			
+			<tr>
+				<td>
+					<table style="text-align:center;font-size:25px" height="500" width="100%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td style="background:yellow" width="30%">网页的左部</td>
+						  <td style="background:green" width="70%">网页的右部</td>	
+					  </tr>
+					</table>
+				</td>							
+			</tr><!--第一种效果，需重新再table加上width-->
+			
+			
+			<!--<tr>
+				<td>
+					<table style="background:yellow;text-align:center;font-size:25px" align="left" height="500" width="30%">
+						<tr><td>网页的左部</td></tr>
+					</table>
+					<table style="background:green;text-align:center;font-size:25px" align="left" height="500" width="70%">
+						<tr><td>网页的右部</td></tr>
+					</table>
+				</td>							
+			</tr>--><!--第二种效果，嵌套的table表格都需要重新设置参数-->
+			
+			<tr style="background:red;color:white" height="90">
+				<td>网页的底部</td>		
+			</tr>	<!--第二行-->	
+		</table>
+	</body>
+</html><!---->

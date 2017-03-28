@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS选择器</title>
+		<!--嵌入式样式表-->
+		<style type="text/css">
+			
+			body{
+				background-color:white;
+				text-algin:center;
+				color:red
+			}
+			.p{
+				background-color:red;
+				text-algin:left;
+				color:black
+			}
+			.p p{background-color:white;}
+			#h1{background-color:blue;font-size:15px;}
+			a:link{color:blue;}
+			a:hover{color:yellow;}
+			a:active{color:red}
+			a:visited{color:black}
+		</style>
+		
+		<!--引入式样式表
+		<link rel="stylesheet" type="text/css" href="style.css">
+		-->
+	</head>	
+	<body>
+		<!--内链样式表
+		<p style="background-color:blue;color:red">按文件规定收费标准执行。一、二、三级每科报考80元，四级报考100元。</p>
+		<p style="background-color:black;color:red">按文件规定收费标准执行。一、二、三级每科报考80元，四级报考100元。</p>
+		-->
+		<div class="p">
+			<h1 class="h1">按文件规定收费标准执行。</h1>
+			<p>按文件规定收费标准执行。一、二、三级每科报考80元，四级报考100元。</p>
+			<p>按文件规定收费标准执行。一、二、三级每科报考80元，四级报考100元。</p>		
+		</div>
+		<div id="h1">
+			<h1>按文件规定收费标准执行。</h1>
+			<p>按文件规定收费标准执行。一、二、三级每科报考80元，四级报考100元。</p>
+			<p>按文件规定收费标准执行。一、二、三级每科报考80元，四级报考100元。</p>		
+		</div>
+		<p>按文件规定收费标准执行。一、二、三级每科报考80元，四级报考100元。</p>
+		<p>按文件规定收费标准执行。一、二、三级每科报考80元，四级报考100元。</p>	
+		<a href="http://www.baidusds.com" target="_blank">百度a</a>	
+		<a href="http://123.xidianass.edu.cn" target="_blank">西电导航d</a>	
+		<a href="http://www.sinasfc.com" target="_blank">新d浪</a>	
+	</body>
+</html>
