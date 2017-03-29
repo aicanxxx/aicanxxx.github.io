@@ -27,6 +27,7 @@ function checkNumber(theObj) {
     return false;
 }
 
+
 function newLiNode(){
     var input=document.getElementById('input');
     var list=document.createElement('li');
@@ -34,8 +35,8 @@ function newLiNode(){
         alert('输入有问题，请输入10-100');
         return null;
     }else{
-        list.innerHTML=input.value;
-        list.setAttribute('class','queueEle');
+        list.style.height=input.value*5+'px';
+        list.style.marginTop=500-input.value*5+'px';
         list.onclick=function(){
             this.parentNode.removeChild(this);
             alert(this.innerHTML);
@@ -46,8 +47,12 @@ function newLiNode(){
 function leftIn(){
     var queue=document.getElementById('queue');
     var eleNode=newLiNode();
-    if(eleNode!=null){
-        queue.insertBefore(eleNode,queue.firstChild);
+    if(eleNode!=null&&queue.childElementCount<=60){
+        if(queue.childElementCount<60){
+            queue.insertBefore(eleNode,queue.firstChild);
+        }else {
+            alert('队列元素超出60');
+        }
     }
 }
 
@@ -55,7 +60,12 @@ function rightIn(){
     var queue=document.getElementById('queue');
     var eleNode=newLiNode();
     if(eleNode!=null) {
-        queue.appendChild(eleNode);
+        if(queue.childElementCount<60){
+            queue.appendChild(eleNode);
+        }else {
+            alert('队列元素超出60');
+        }
+
     }
 }
 function leftOut(){
@@ -77,11 +87,48 @@ function rightOut(){
         alert('队列中没有元素')
     }
 }
+function getData(){
+    var queue=document.getElementById('queue');
+    var list=queue.getElementsByTagName('li');
+    var data=[];
+    for(var i=0;i<list.length;i++){
+        data[i]=list[i].offsetHeight;
+    }
+    return data;
+}
+function dataVisualization(){
+    var queue=document.getElementById('queue');
+    var list=queue.getElementsByTagName('li');
+    var arr=getData();
+    var i=0;
+    var temp,count=0;
+    while (i<list.length){
+        for (var j=list.length-2;j>=i;j--){
+            if(arr[j+1]<arr[j]){
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+                count+=1;
+                (function(val,k,p,q){
+                    setTimeout(function(){
+                        list[val].style.height=p;
+                        list[val].style.marginTop=500-p+'px';
+                        list[val+1].style.height=q;
+                        list[val+1].style.marginTop=500-q+'px';
+                    },k*1000);
+                })(j,count,arr[j],arr[j+1]);
+            }
+        }
+        i++;
+    }
+}
+
 function btnAddClick(){
     addClick('btn1',leftIn);
     addClick('btn2',rightIn);
     addClick('btn3',leftOut);
     addClick('btn4',rightOut);
+    addClick('btn5',dataVisualization);
 }
 
 addLoadEvent(btnAddClick);

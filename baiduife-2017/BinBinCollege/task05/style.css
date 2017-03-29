@@ -18,11 +18,16 @@ ul{
     padding: 0;
 }
 li{
+    display: table-cell;
+    text-align: center;
+    width: 30px;
     list-style: none;
     float: left;
     background-color: red;
     font-size: 24px;
     color: #fff;
-    margin: 5px;
-    padding: 20px;
+    margin: 0 5px;
+}
+div{
+    height: 500px;
 }
