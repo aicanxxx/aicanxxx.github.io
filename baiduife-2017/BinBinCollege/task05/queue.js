@@ -38,8 +38,9 @@ function newLiNode(){
         list.style.height=input.value*5+'px';
         list.style.marginTop=500-input.value*5+'px';
         list.onclick=function(){
+            alert((this.offsetHeight)/5);
             this.parentNode.removeChild(this);
-            alert(this.innerHTML);
+
         };
         return list;
     }
@@ -71,20 +72,20 @@ function rightIn(){
 function leftOut(){
     var queue=document.getElementById('queue');
     if(queue.childElementCount!=0){
-        alert(queue.firstChild.innerHTML);
-        queue.removeChild(queue.firstChild);
+        alert(queue.firstElementChild.offsetHeight/5);
+        queue.removeChild(queue.firstElementChild);
     } else {
-        alert('队列中没有元素')
+        alert('队列中没有元素');
     }
 
 }
 function rightOut(){
     var queue=document.getElementById('queue');
     if(queue.childElementCount!=0){
-        alert(queue.lastChild.innerHTML);
-        queue.removeChild(queue.lastChild);
+        alert(queue.lastElementChild.offsetHeight/5);
+        queue.removeChild(queue.lastElementChild);
     } else {
-        alert('队列中没有元素')
+        alert('队列中没有元素');
     }
 }
 function getData(){
@@ -99,6 +100,10 @@ function getData(){
 function dataVisualization(){
     var queue=document.getElementById('queue');
     var list=queue.getElementsByTagName('li');
+    if(list.length<1){
+        alert('队列中没有元素');
+        return;
+    }
     var arr=getData();
     var i=0;
     var temp,count=0;

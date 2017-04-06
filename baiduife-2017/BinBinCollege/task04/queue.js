@@ -34,7 +34,6 @@ function newLiNode(){
         return null;
     }else{
         list.innerHTML=input.value;
-        list.setAttribute('class','queueEle');
         list.onclick=function(){
             this.parentNode.removeChild(this);
             alert(this.innerHTML);

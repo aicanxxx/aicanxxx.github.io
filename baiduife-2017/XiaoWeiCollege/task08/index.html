@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,29 +6,72 @@
     <!--[if IE]>
     ＜script src=”http://html5shiv.googlecode.com/svn/trunk/html5.js”>＜/script>
     <![endif]-->
-    <title>bootstrap栅格化布局</title>
-    <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="styles/styles.css">
+<!--<title>bootstrap栅格化布局</title>
+<link rel="stylesheet" href="styles/bootstrap.css">
+<link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 <div class="container">
-    <div class="row ">
-        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><div class="main"></div></div>
-        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><div class="main"></div></div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><div class="main"></div></div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><div class="main"></div></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><div class="main"></div></div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><div class="main"></div></div>
-    </div>
-    <div class="row">
-        <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1"><div class="main"></div></div>
-        <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1"><div class="main"></div></div>
-        <div class="col-xs-8 col-sm-2 col-md-2 col-lg-2"><div class="main"></div></div>
-        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><div class="main"></div></div>
-        <div class="col-xs-3 col-sm-6 col-md-6 col-lg-6"><div class="main"></div></div>
-    </div>
+<div class="row ">
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><div class="main"></div></div>
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><div class="main"></div></div>
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><div class="main"></div></div>
 </div>
+<div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><div class="main"></div></div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><div class="main"></div></div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><div class="main"></div></div>
+</div>
+<div class="row">
+    <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1"><div class="main"></div></div>
+    <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1"><div class="main"></div></div>
+    <div class="col-xs-8 col-sm-2 col-md-2 col-lg-2"><div class="main"></div></div>
+    <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><div class="main"></div></div>
+    <div class="col-xs-3 col-sm-6 col-md-6 col-lg-6"><div class="main"></div></div>
+</div>
+</div>
+</body>
+</html>-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>导航条</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--css样式-->
+    <style >
+        body{margin:30px;padding:30px;}
+    </style>
+</head>
+<body>
+<div class="navbar navbar-default" role="navigation">
+    <!--标题通过“navbar-header”和“navbar-brand”来实现-->
+    <div class="navbar-header">
+        <a href="##" class="navbar-brand">标题</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="##">首页</a></li>
+        <li class="dropdown">
+            <a href="##" data-toggle="dropdown" class="dropdown-toggle">博客<span class="caret"></span></a>
+            <!--二级菜单-->
+            <ul class="dropdown-menu">
+                <li><a href="##">二级菜单</a></li>
+            </ul>
+        </li>
+        <li><a href="##">论坛</a></li>
+    </ul>
+    <!--表单-->
+    <form action="##" class="navbar-form navbar-left" rol="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入关键词" />
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+    </form>
+</div>
+<!-- 放置在文档的结尾，使页面加载速度更快 -->
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
