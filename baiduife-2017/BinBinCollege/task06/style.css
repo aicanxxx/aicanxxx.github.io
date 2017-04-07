@@ -1,0 +1,28 @@
+
+#input{
+    width: 250px;
+    height:30px;
+}
+button{
+    background-color: #fff;
+    border: solid 1px #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 20px;
+    width: 80px;
+}
+#btn2{
+    margin-right: 50px;
+}
+ul{
+    padding: 0;
+}
+li{
+    list-style: none;
+    float: left;
+    border: solid 1px #e0e0e0;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 5px;
+    padding: 20px;
+}
