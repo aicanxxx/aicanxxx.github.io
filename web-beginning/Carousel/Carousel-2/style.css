@@ -33,7 +33,11 @@ nav{
     width: 720px;
     height: 405px;
     float: left;
+    opacity: 0;
 }
 #index .on{
     background-color: black;
+}
+#img .on{
+    opacity: 1;
 }

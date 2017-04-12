@@ -12,39 +12,14 @@ function addLoadEvent(func){
         }
     }
 }
-function moveElement(ele,x_final,y_final,interval){//移动图片元素
-    var x_pos=ele.offsetLeft;
-    var y_pos=ele.offsetTop;
-    var dist=0;
-    if(ele.movement){//防止悬停
-        clearTimeout(ele.movement);
+/*function moveElement(list,index){//移动图片元素
+    for(var i=0;i<list.length;i++){
+        if(list[i].className=='on'){//清除li的背景样式
+            list[i].className='';
+        }
     }
-    if(x_pos==x_final&&y_pos==y_final){//先判断是否需要移动
-        return;
-    }
-    if(x_pos<x_final){
-        dist=Math.ceil((x_final-x_pos)/10);//分10次移动完成
-        x_pos+=dist;
-    }
-    if(x_pos>x_final){
-        dist=Math.ceil((x_pos-x_final)/10);//分10次移动完成
-        x_pos-=dist;
-    }
-    if(y_pos<y_final){
-        dist=Math.ceil((y_final-y_pos)/10);//分10次移动完成
-        y_pos+=dist;
-    }
-    if(y_pos>y_final){
-        dist=Math.ceil((y_pos-y_final)/10);//分10次移动完成
-        y_pos-=dist;
-    }
-    ele.style.left=x_pos+'px';
-    ele.style.top=y_pos+'px';
-    //var repeat="moveElement("+ele+","+x_final+","+y_final+","+interval+")";
-    ele.movement=setTimeout(function(){
-        moveElement(ele,x_final,y_final,interval);
-    },interval)
-}
+    list[index-1].className='on';
+}*/
 
 function moveIndex(list,index){//移动小圆圈
     for(var i=0;i<list.length;i++){
@@ -56,7 +31,7 @@ function moveIndex(list,index){//移动小圆圈
 }
 
 function main(){
-    var img=document.getElementById('img');
+    var imgList=document.getElementById('img').getElementsByTagName('li');
     var list=document.getElementById('index').getElementsByTagName('li');
     var index=1;
     var timer;
@@ -65,7 +40,7 @@ function main(){
         list[i].index=i;
         list[i].onmouseover= function () {
             var clickIndex=parseInt(this.getAttribute('index'));
-            moveElement(img,-720*(clickIndex-1),0,10);
+            moveIndex(imgList,clickIndex-1);
             index=clickIndex;
             moveIndex(list,index);
             clearInterval(timer);
