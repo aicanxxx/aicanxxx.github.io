@@ -37,7 +37,7 @@ function moveElement(elementID,final_x,final_y,interval){
     if(ele.movement){//为了防止鼠标悬停
         clearTimeout(ele.movement);
     }
-    if(!ele.style.left){
+    if(!ele.style.left){//style.left的值需要事先定义，否则取到的值为空
         ele.style.left='0px';
     }
     if(!ele.style.top){
@@ -68,7 +68,7 @@ function moveElement(elementID,final_x,final_y,interval){
     ele.style.left=xpos+"px";
     ele.style.top=ypos+"px";
     var repeat="moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
-    ele.movement=setTimeout(repeat,interval);
+    ele.movement=setTimeout(repeat,interval);//给ele添加一个movement属性
 }
 function highlightPage(){
     if(!document.getElementsByTagName)return false;
