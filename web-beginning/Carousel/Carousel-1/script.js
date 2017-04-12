@@ -60,8 +60,9 @@ function main(){
     var list=document.getElementById('index').getElementsByTagName('li');
     var index=1;
     var timer;
-    
+
     for(var i=0;i<list.length;i++){//鼠标覆盖上哪个小圆圈，图片就移动到哪个小圆圈，并停止
+        list[i].index=i;
         list[i].onmouseover= function () {
             var clickIndex=parseInt(this.getAttribute('index'));
             moveElement(img,-720*(clickIndex-1),0,10);
