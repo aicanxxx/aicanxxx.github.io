@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    margin: 50px 50px 0 50px;
+    float: left;
+}
+table{
+    border-collapse: collapse;
+}
+td{
+    border: solid 1px silver;
+    width: 30px;
+    height: 30px;
+}

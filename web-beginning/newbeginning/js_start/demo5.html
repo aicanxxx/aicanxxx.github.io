@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Shape(name){
+        this.name=name;
+        if(typeof this.getName !="function"){
+            Shape.prototype.getName=function(){
+                alert(this.name);
+            }
+        }
+    }
+    var twoDShape=new Shape('2D Shape');
+    var triangle=new Shape('Triangle');
+    twoDShape.getName();//2D Shape
+    triangle.getName();//Triangle
+    function Shapes(row,col){
+        this.state=[];//是存放四个小方块相对第一个小方块的偏移坐标
+        this.row=row;//row和col是4*4的基准坐标，以第一个小方块为准
+        this.col=col;
+        this.gCoordinate=[];//4个小方块的坐标
+        this.curState=0;//默认为第一个形状的偏移量state[0]
+
+        if(!Shapes.prototype.change){
+            Shapes.prototype.change=function(){
+                if(this.curState+1==this.state.length){
+                    this.curState=0;
+                }else{
+                    this.curState++;
+                }
+                for(let i=0;i<this.gCoordinate.length;i++){
+                    this.gCoordinate[i]=[this.row+this.state[this.curState]['x'+i],this.col+this.state[this.curState]['y'+i]];
+                }
+            }
+        }
+        if(!Shapes.prototype.drop){
+            Shapes.prototype.drop=function(){
+                this.row++;
+            }
+        }
+        if(!Shapes.prototype.moveLeft){
+            Shapes.prototype.moveLeft=function(){
+                this.col--;
+            }
+        }
+        if(!Shapes.prototype.moveRight){
+            Shapes.prototype.moveRight=function(){
+                this.col++;
+            }
+        }
+    }
+    function inheritPrototype(child,parent){//寄生组合式继承
+        var F=function(){};
+        F.prototype=parent.prototype;
+        child.prototype=new F();
+        child.prototype.constructor=child;
+    }
+    function I(){
+        Shapes.call(this,0,3);//类继承，在（0,3）处生成4*4矩阵
+        inheritPrototype(this,Shapes);
+        this.state[0]=new State(0,0,1,0,2,0,3,0);
+        this.state[1]=new State(0,0,0,1,0,2,0,3);
+        //初始化第一个形状
+        for(let i=0;i<4;i++){
+            this.gCoordinate[i]=[this.row+this.state[0]['x'+i],this.col+this.state[0]['y'+i]];
+        }
+    }
+    tetrisGame.curCoordinate=new I();
+    tetrisGame.curCoordinate.change();
+</script>
+</body>
+</html>
