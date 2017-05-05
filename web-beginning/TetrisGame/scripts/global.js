@@ -15,6 +15,7 @@ function addEventLoad(func){
 }
 var tetrisGame={
     area:[],
+    nextTab:[],
     Column:10,
     Row:18,
     curBlocks:null,
@@ -22,6 +23,7 @@ var tetrisGame={
     beforeBlocks:null,
     score:0,
     end:0,
+    isOn:0,
     Wall:[],
     createTable:function(){
         if(!document.getElementById('table'))return false;
@@ -38,10 +40,27 @@ var tetrisGame={
             }
             table.appendChild(tabr);
         }
-        for(let i=0;i<3;i++){
+        this.createNextTab();
+        /*for(let i=0;i<3;i++){
             for(let j=0;j<this.Column;j++){
                 this.area[i][j].style.display='none';
             }
+        }*/
+    },
+    createNextTab:function(){
+        if(!document.getElementById('next'))return false;
+        var next=document.getElementById('next');
+        for(let i=0;i<4;i++){//i是行，j是列
+            this.nextTab[i]=[];
+            //this.Wall[i]=[];//初始化Wall为二维数组
+            var tabr=document.createElement('tr');
+            for(let j=0;j<4;j++){
+                var tabd=document.createElement('td');
+                tabr.appendChild(tabd);
+                this.nextTab[i][j]=tabd;
+                //this.Wall[i][j]=0;
+            }
+            next.appendChild(tabr);
         }
     },
     createShapes:function(){
@@ -228,25 +247,31 @@ var tetrisGame={
     },
     init:function(){
         this.curBlocks=this.createShapes();
-        //this.nextBlocks=this.createShapes();
+
         this.createTable();
-        this.printBlocks();
+
         this.play();
     },
     play:function(){
         this.nextBlocks=this.createShapes();
-        //this.printBlocks();
+        this.printBlocks();
         this.keyPress();
         var timer=setInterval(function(){
             if(tetrisGame.end){
+                clearInterval(timer);
                 tetrisGame.curBlocks=tetrisGame.nextBlocks;
                 tetrisGame.end=0;
-                clearInterval(timer);
+                //if(tetrisGame.isOn){
+                    //
+                //}else{
                 tetrisGame.play();
+                //}
+            }else{
+                tetrisGame.clearBlocks();
+                tetrisGame.moveD();
+                tetrisGame.printBlocks();
             }
-            tetrisGame.clearBlocks();
-            tetrisGame.moveD();
-            tetrisGame.printBlocks();
+
         },1000);
     },
     keyPress:function(){
@@ -278,10 +303,13 @@ var tetrisGame={
         }
     },
     isOver:function(){
-        var num=0;
-        for(let i=0;i<this.Row;i++){//当i=0的时候游戏已经结束
+        //var num=0;
+        for(let i=0;i<this.Column;i++){//当i=0的时候游戏已经结束
+            if(this.Wall[1][i]==1){
+                this.clearAll();
+            }
             //num=0;
-            for(let j=0;j<this.Column;j++){
+            /*for(let j=0;j<this.Column;j++){
                 if(this.Wall[i][j]==1){
                     break;
                 }else{
@@ -295,7 +323,7 @@ var tetrisGame={
                         this.area[k][j].style.backgroundColor=this.area[k-1][j].style.backgroundColor;
                     }
                 }
-            }
+            }*/
         }
     },
     printBlocks:function(){
@@ -303,6 +331,7 @@ var tetrisGame={
         for(let i=0;i<this.curBlocks.gCoordinate.length;i++){
             x=this.curBlocks.row+this.curBlocks.state[this.curBlocks.curState]['x'+i];
             y=this.curBlocks.col+this.curBlocks.state[this.curBlocks.curState]['y'+i];
+            console.log(x,y);
             if(x>=this.Row-1){//判断是否到达底部
                 this.end=1;
             }else{
@@ -310,7 +339,7 @@ var tetrisGame={
                     this.end=1;
                 }
             }
-            //this.curBlocks.gCoordinate[i]=[x,y];
+            this.curBlocks.gCoordinate[i]=[x,y];
         }
         for(let i=0;i<this.curBlocks.gCoordinate.length;i++){
             this.area[this.curBlocks.gCoordinate[i][0]][this.curBlocks.gCoordinate[i][1]].style.backgroundColor=this.curBlocks.color;
@@ -323,6 +352,7 @@ var tetrisGame={
                 this.Wall[x][y]=1;
             }
             this.isDelete();
+            //this.isOver();
         }
     },
     clearBlocks:function(){
