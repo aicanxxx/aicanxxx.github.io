@@ -21,9 +21,10 @@ var tetrisGame={
     curBlocks:null,
     nextBlocks:null,
     beforeBlocks:null,
+    highScore:0,
     score:0,
     end:0,
-    isOn:0,
+    isOver:0,
     Wall:[],
     createTable:function(){
         if(!document.getElementById('table'))return false;
@@ -41,11 +42,11 @@ var tetrisGame={
             table.appendChild(tabr);
         }
         this.createNextTab();
-        /*for(let i=0;i<3;i++){
+        for(let i=0;i<3;i++){
             for(let j=0;j<this.Column;j++){
                 this.area[i][j].style.display='none';
             }
-        }*/
+        }
     },
     createNextTab:function(){
         if(!document.getElementById('next'))return false;
@@ -62,6 +63,34 @@ var tetrisGame={
             }
             next.appendChild(tabr);
         }
+    },
+    addClick:function(){
+        function addId(eleId,func){
+            if(!document.getElementById(eleId))return false;
+            var ele=document.getElementById(eleId);
+            ele.onclick=function(){
+                func();
+            }
+        }
+        function gameBegin(){
+            tetrisGame.play();
+        }
+        function gameOver(){
+            tetrisGame.end=1;
+            tetrisGame.isOver=1;
+        }
+
+        addId('begin',gameBegin);
+        addId('end',gameOver);
+
+    },
+    showScore:function(){
+        if(!document.getElementById('curScore'))return false;
+        if(!document.getElementById('highScore'))return false;
+        var curScore=document.getElementById('curScore');
+        var highScore=document.getElementById('highScore');
+        curScore.innerHTML='Score：'+this.score;
+        highScore.innerHTML='HighScore：'+this.highScore;
     },
     createShapes:function(){
         var r1=Math.floor(Math.random()*7);
@@ -247,25 +276,29 @@ var tetrisGame={
     },
     init:function(){
         this.curBlocks=this.createShapes();
-
         this.createTable();
-
-        this.play();
+        this.showScore();
+        this.addClick();
     },
     play:function(){
-        this.nextBlocks=this.createShapes();
+
         this.printBlocks();
+        this.nextBlocks=this.createShapes();
+        this.printNextBlocks();
         this.keyPress();
         var timer=setInterval(function(){
             if(tetrisGame.end){
                 clearInterval(timer);
                 tetrisGame.curBlocks=tetrisGame.nextBlocks;
+                tetrisGame.clearNextBlocks();
                 tetrisGame.end=0;
-                //if(tetrisGame.isOn){
-                    //
-                //}else{
-                tetrisGame.play();
-                //}
+                if(tetrisGame.isOver){
+                    tetrisGame.isOver=0;
+                    tetrisGame.clearAll();
+                    alert("Game Over");
+                }else{
+                    tetrisGame.play();
+                }
             }else{
                 tetrisGame.clearBlocks();
                 tetrisGame.moveD();
@@ -282,8 +315,8 @@ var tetrisGame={
         };
     },
     isDelete:function(){
-        var num=0;
-        for(let i=this.Row-1;i>0;i--){//当i=0的时候游戏已经结束
+        var num=0,row=0,x=0;
+        for(let i=this.Row-1;i>3;i--){//当i=3的时候游戏已经结束
             num=0;
             for(let j=0;j<this.Column;j++){
                 if(this.Wall[i][j]==0){
@@ -293,40 +326,78 @@ var tetrisGame={
                 }
             }
             if(num==10){
-                for(let k=i;k>0;k--){
-                    for(let j=0;j<this.Column;j++){
-                        this.Wall[k][j]=this.Wall[k-1][j];
-                        this.area[k][j].style.backgroundColor=this.area[k-1][j].style.backgroundColor;
-                    }
-                }
+                row=i;
+                break;
             }
         }
-    },
-    isOver:function(){
-        //var num=0;
-        for(let i=0;i<this.Column;i++){//当i=0的时候游戏已经结束
-            if(this.Wall[1][i]==1){
-                this.clearAll();
-            }
-            //num=0;
-            /*for(let j=0;j<this.Column;j++){
-                if(this.Wall[i][j]==1){
+        if(row){
+            for(let i=3;i<this.Row;i++){//当i=3的时候游戏已经结束
+                for(let j=0;j<this.Column;j++){
+                    if(this.Wall[i][j]){
+                        x=i;//求出有值的最小行数
+                        break;
+                    }
+                }
+                if(x){
                     break;
-                }else{
-                    num++;
                 }
             }
-            if(num==10){
-                for(let k=i;k>0;k--){
+            for(let k=row;k>=x;k--){
+                for(let j=0;j<this.Column;j++){
+                    this.Wall[k][j]=this.Wall[k-1][j];//再将上一行的往下移
+                    this.area[k][j].style.backgroundColor=this.area[k-1][j].style.backgroundColor;
+                }
+            }
+            this.score++;
+            this.highScore=this.highScore>this.score?this.highScore:this.score;
+           /* }else{
+                for(let k=0;k<row.length;k++){
                     for(let j=0;j<this.Column;j++){
-                        this.Wall[k][j]=this.Wall[k-1][j];
+                        this.Wall[row[k]][j]=0;
+                        this.area[row[k]][j].style.backgroundColor='#fff';//先将能消除的删掉
+
+                    }
+                }
+                for(let k=row[0];k>=x;k--){
+                    for(let i=1;i<row.length;i++){
+                        if(k-1==row[i]){//判断下一行是否已经消除
+                            break;
+                        }
+                    }
+                    for(let j=0;j<this.Column;j++){
+                        this.Wall[k][j]=this.Wall[k-1][j];//再将上一行的往下移
                         this.area[k][j].style.backgroundColor=this.area[k-1][j].style.backgroundColor;
                     }
                 }
             }*/
+            return true;
+        }else{
+            return false;
+        }
+
+    },
+    isGameOver:function(){
+        //var num=0;
+        for(let i=0;i<this.Column;i++){//当i=0的时候游戏已经结束
+            if(this.Wall[3][i]==1){
+                //setTimeout(function(){
+                tetrisGame.isOver=1;
+                this.score=0;
+                this.showScore();
+                break;
+               // },2000);
+            }
         }
     },
+
     printBlocks:function(){
+        //判断是否为前3行
+        if(this.curBlocks.row<3){
+            this.curBlocks.row=3;
+            while(this.isHit()){
+                this.curBlocks.row--;
+            }
+        }
         var x=0,y=0;
         for(let i=0;i<this.curBlocks.gCoordinate.length;i++){
             x=this.curBlocks.row+this.curBlocks.state[this.curBlocks.curState]['x'+i];
@@ -351,13 +422,29 @@ var tetrisGame={
                 y=this.curBlocks.col+this.curBlocks.state[this.curBlocks.curState]['y'+i];
                 this.Wall[x][y]=1;
             }
-            this.isDelete();
-            //this.isOver();
+            while(this.isDelete()){
+                this.showScore();
+            }
+            this.isGameOver();
+
+        }
+    },
+    printNextBlocks:function(){
+        var x=0,y=0;
+        for(let i=0;i<this.nextBlocks.gCoordinate.length;i++){
+            x=this.nextBlocks.state[this.nextBlocks.curState]['x'+i];
+            y=this.nextBlocks.state[this.nextBlocks.curState]['y'+i];
+            this.nextTab[x][y].style.backgroundColor=this.nextBlocks.color;
         }
     },
     clearBlocks:function(){
         for(let i=0;i<this.curBlocks.gCoordinate.length;i++){
             this.area[this.curBlocks.gCoordinate[i][0]][this.curBlocks.gCoordinate[i][1]].style.backgroundColor='#fff';
+        }
+    },
+    clearNextBlocks:function(){
+        for(let i=0;i<this.nextBlocks.gCoordinate.length;i++){
+            this.nextTab[this.nextBlocks.state[this.nextBlocks.curState]['x'+i]][this.nextBlocks.state[this.nextBlocks.curState]['y'+i]].style.backgroundColor='#fff';
         }
     },
     clearAll:function(){
@@ -368,6 +455,8 @@ var tetrisGame={
             }
         }
     }
+
+
 };
 
 
