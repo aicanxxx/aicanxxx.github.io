@@ -132,6 +132,7 @@ var tetrisGame={
         this.curBlocks.moveLeft();
         if(this.isHit()){
             this.curBlocks=this.beforeBlocks;
+            this.curBlocks.moveRight();//列数还原
         }else{
             this.isIn();
             for(let i=0;i<this.curBlocks.gCoordinate.length;i++){
@@ -158,6 +159,7 @@ var tetrisGame={
         this.curBlocks.moveRight();
         if(this.isHit()){
             this.curBlocks=this.beforeBlocks;
+            this.curBlocks.moveLeft();//列数还原
         }else{
             this.isIn();
             for(let i=0;i<this.curBlocks.gCoordinate.length;i++){
@@ -175,6 +177,7 @@ var tetrisGame={
         //是否碰撞
         if(this.isHit()){
             this.curBlocks=this.beforeBlocks;
+            this.curBlocks.row--;
         }else{
             for(let i=0;i<this.curBlocks.gCoordinate.length;i++){
                 this.curBlocks.gCoordinate[i]=[this.curBlocks.row+this.curBlocks.state[this.curBlocks.curState]['x'+i],
@@ -402,7 +405,6 @@ var tetrisGame={
         for(let i=0;i<this.curBlocks.gCoordinate.length;i++){
             x=this.curBlocks.row+this.curBlocks.state[this.curBlocks.curState]['x'+i];
             y=this.curBlocks.col+this.curBlocks.state[this.curBlocks.curState]['y'+i];
-            console.log(x,y);
             if(x>=this.Row-1){//判断是否到达底部
                 this.end=1;
             }else{
