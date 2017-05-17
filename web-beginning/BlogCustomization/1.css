@@ -1,0 +1,1006 @@
+/*
+                        keepfool博客园样式 - Version 1.0.0 beta (2016/05/10)
+
+                        Content:
+                        01.全局样式                         	09.推荐和关注
+                        02.布局样式                         	10.代码高亮
+                        03.随笔样式                         	11.侧边栏
+                        04.重要和注意                       	12.广告区域
+                        05.标注                                	13.签名
+                        06.表格                             	14.小酌重构系列-文章头部的斜飘带
+                        07.span文字高亮                       	15.文章目录
+                        08.演示和下载链接						16.iconfont
+*/
+
+
+/* [01.全局样式] */
+
+html {
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-size: 1.6em;
+    line-height: 1.8;
+    cursor: default;
+    font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, 'Segoe UI', 'Micrsoft YaHei', 微软雅黑, 'WenQuanYi Micro Hei', Tahoma, Arial, sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.428571429;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+::-moz-selection {
+    background: #FFEFD5;
+}
+
+::selection {
+    background: #FFEFD5;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    white-space: nowrap;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+
+/* [02.布局样式] */
+
+#home {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /*background-color: #eee;*/
+}
+
+#header {
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+#navigator {
+    position: relative;
+    height: 74px;
+    box-sizing: border-box;
+    background-color: #36424a;
+    margin-top: 0;
+    padding: 0 8px 0 8px;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    z-index: 1001;
+}
+
+#navList {
+    height: 100%;
+}
+
+#navList a:link,
+#navList a:visited {
+    color: #ccc;
+    display: block;
+    height: 74px;
+    box-sizing: border-box;
+}
+
+#navList a:active,
+#navList a:hover,
+#navList a:focus {
+    color: #fff;
+    background-color: #DA4453;
+    border-radius: 4px;
+}
+
+#blogTitle {
+    display: none;
+}
+
+#main {
+    width: 90%;
+    max-width: 1400px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto;
+}
+
+#mainContent {
+    margin-left: -20em;
+    padding: 15px 0px 10px 0;
+}
+
+#mainContent .forFlow {
+    margin-left: 20em;
+}
+
+
+/* [03.随笔样式] */
+
+#topics {
+    /*    margin-top: 10px;*/
+}
+
+.post {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #384046;
+    line-height: 1.8em;
+    background: #fff;
+    border: 1px solid #E6E6FA;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
+    padding: 0.3em 0.6em;
+    border-radius: 5px;
+    border-top: 5px solid rgba(255, 99, 71, 0.62);
+}
+
+#topics .postTitle {
+    font-size: 2em;
+}
+
+.postTitle,
+.entrylistPosttitle {
+    padding: 10px 10px 20px 20px;
+    border-left: 5px solid salmon;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.postTitle a:link,
+.postTitle a:visited,
+.postTitle a:active,
+.entrylistPosttitle a:link,
+.entrylistPosttitle a:visited,
+.entrylistPosttitle a:active {
+    color: #FA8072;
+    text-decoration: none;
+    padding: 0;
+    line-height: 30px;
+    color: #FA8072;
+    letter-spacing: 1px;
+}
+
+.postTitle a:hover,
+.entrylistPosttitle a:hover {
+    color: #FF6347;
+}
+
+.entrylistTitle {
+    margin-bottom: 1em;
+    height: initial;
+    line-height: initial;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.postBody {
+    margin-bottom: 30px;
+    font-size: 1em;
+    color: #2F4F4F;
+    padding: 10px 20px;
+}
+
+.postBody img {
+    border: 1px solid #eee !important;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: cornflowerblue;
+}
+
+a:hover {
+    color: #FF6347;
+}
+
+#cnblogs_post_body ul {
+    margin: 10px 0 10px 50px;
+    padding: 2px 32px 2px 32px;
+    border-left: 4px solid #e2e3e4;
+}
+
+.postBody li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.postBody li:first-child {
+    margin-top: 10px;
+}
+
+.postBody li:last-child {
+    margin-bottom: 10px;
+}
+
+#cnblogs_post_body h1 {
+    clear: both;
+    color: #333;
+    display: block;
+    font-size: 1.7em;
+    /*padding: 0.2em 0.5em;*/
+    padding: 10px 20px;
+    margin: 15px 0 15px 5px;
+    position: relative;
+    border-bottom: 1px solid #e2e3e4;
+    /*background: #2C3E50;
+    border-radius: 4px;*/
+}
+
+#cnblogs_post_body h2 {
+    color: #FF6347;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin: 5px 0 5px 5px;
+}
+
+#cnblogs_post_body h3 {
+    color: #1E90FF;
+    font-size: 1.3em;
+    font-weight: normal;
+    /*padding: 15px 20px;*/
+    padding: 10px 20px;
+    margin: 5px 0 5px 5px;
+}
+
+#cnblogs_post_body p {
+    margin: 10px 10px 10px 50px;
+}
+
+.postBody ol,
+.postBody ul {
+    margin-left: 30px;
+}
+
+.postBody blockquote {
+    background-color: #f0f0e3;
+    border-left: 5px solid #00539f;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.45;
+    margin: 1em 0;
+    padding: 0;
+    position: relative;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.postBody blockquote p {
+    margin-left: 30px !important;
+}
+
+#blog_post_info_block {
+    margin-left: 10px;
+}
+
+#EntryTag a:link,
+#EntryTag a:visited,
+#EntryTag a:active,
+#BlogPostCategory a:link,
+#BlogPostCategory a:visited,
+#BlogPostCategory a:active {
+    text-decoration: none;
+    display: inline-block;
+    padding: .25em .5em;
+    margin: 0 3px;
+    font-size: 16px;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e85c33), to(#E74C3C));
+    background: -webkit-linear-gradient(top, #e85c33 0, #E74C3C 100%);
+    background: linear-gradient(to bottom, #e85c33 0, #E74C3C 100%);
+    border-radius: 4px;
+}
+
+#EntryTag a:hover,
+#BlogPostCategory a:hover {
+    background: #36424a;
+}
+
+
+/* [04.重要和注意] */
+
+.postBody .important {
+    background: none repeat scroll 0 0 #e7f4ff;
+    border: 1px solid #c9ddfa;
+    margin: 0 0 20px;
+    padding: 12px 15px;
+}
+
+.postBody .note {
+    position: relative;
+    background: #fff4cc;
+    border-left: 5px solid #ffe070;
+    margin-left: 50px !important;
+    padding: 12px 15px;
+}
+
+.postBody .note .dogear {
+    height: 14px;
+    width: 15px;
+    z-index: 1;
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    background: url(http://files.cnblogs.com/files/keepfool/sprite-article.gif) no-repeat 0 0;
+}
+
+
+/* [05.标注] */
+
+.postBody .bs-callout {
+    padding: 20px;
+    margin: 10px 0 10px 50px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.postBody .bs-callout-info {
+    border-left-color: #1b809e;
+}
+
+.postBody .bs-callout-warning {
+    border-left-color: #aa6708;
+}
+
+.postBody .bs-callout-danger {
+    border-left-color: #ce4844;
+}
+
+
+/* [06.表格] */
+
+.postBody .post-table {
+    border-collapse: collapse;
+    margin: 10px 10px 10px 50px;
+    border-radius: 0;
+}
+
+.postBody .post-table th,
+.post-table td {
+    border: 1px solid #e2e4e6;
+}
+
+.postBody .post-table th {
+    background: #f1f1f1;
+    color: #000;
+}
+
+.postBody .post-table tr:nth-of-type(even) {
+    background: #fff;
+    color: #000;
+}
+
+.postBody .post-table tr:nth-of-type(odd) {
+    background: #fff;
+    color: #000;
+}
+
+.postBody .post-table th {
+    padding: 10px 15px;
+    font-size: 15px;
+}
+
+.postBody .post-table td {
+    padding: 3px 6px;
+    color: #333;
+}
+
+
+/* [07.span文字高亮] */
+
+.postBody .spec-red,
+.postBody .spec-yellow,
+.postBody .spec-green {
+    display: inline-block;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    font-family: 'Segoe UI', Consolas;
+    margin: 0 3px;
+    padding-left: 5px;
+}
+
+.postBody .spec-green {
+    background: #c6e2cc;
+    color: #309c40;
+    border-left-color: #309c40;
+}
+
+.postBody .spec-yellow {
+    background: #fff4cc;
+    color: #900;
+    border-left-color: #ffe070;
+}
+
+.postBody .spec-red {
+    background: #f4d7c9;
+    color: #e66e33;
+    border-left-color: #e66e33;
+}
+
+
+/* [08.演示和下载链接] */
+
+.postBody .demo {
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    color: #666;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.postBody .btn-demo {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #19b586;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    color: #fff !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-shadow: rgba(35, 69, 90, 0.51) 0 -1px 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 2px;
+    box-shadow: 0 2px 2px #cddbe2;
+    -webkit-box-shadow: 0 2px 2px #cddbe2;
+    -moz-box-shadow: 0 2px 2px #cddbe2;
+    -moz-transition: opacity .2s linear;
+    -webkit-transition: opacity .2s linear;
+    -o-transition: opacity .2s linear;
+    margin: 10px;
+    padding: 5px 20px;
+}
+
+.postBody .btn-demo:hover {
+    background-color: #e05326;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* [09.推荐和关注] */
+
+.fastcomment {
+    border: 1px solid #555555;
+    color: #FFFFFF;
+    height: 30px;
+    width: 50px;
+}
+
+.fastcomment:hover {
+    color: #000000;
+}
+
+#comment_form_container .comment_textarea {
+    width: 80%;
+    border-radius: 5px;
+}
+
+.fixed-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    width: 60px;
+    height: 100%;
+    background: #36424a;
+    z-index: 1000;
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-wrap {
+    margin: 0;
+    padding: 0;
+}
+
+.fixed-sidebar table,
+.fixed-sidebar td {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+}
+
+.icon-wrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    opacity: 0.8;
+    /*    padding-top: 12px;
+    padding-bottom: 12px;*/
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    /*				background-color: #DA4453;*/
+}
+
+.icon-wrapper:hover {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.icon-wrapper i {
+    font-size: 36px;
+}
+
+.toggle-toc {
+    background-color: #00a7e2;
+}
+
+.toggle-rside {
+    background-color: #b59973;
+}
+
+.myfollow {
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    /*    padding-top: 12px;
+    padding-bottom: 12px;*/
+    background: #ff7c80;
+    text-align: center;
+}
+
+.myfollow a {
+    text-decoration: none !important;
+    color: #fff !important;
+    font-size: 36px !important;
+    opacity: 0.8;
+}
+
+.myfollow a:hover {
+    opacity: 1;
+}
+
+.myfollow i {
+    font-size: 36px;
+}
+
+#div_digg {
+    width: 60px;
+    /*    position: fixed;
+    right: 0;
+    bottom: 0;*/
+    margin: 0;
+    z-index: 1000;
+}
+
+.diggit,
+.buryit {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    /*    border-radius: 5px;*/
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    opacity: 0.8;
+    cursor: pointer;
+    background-image: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.diggit:hover {
+    opacity: 1;
+}
+
+.diggit {
+    float: left;
+    background-color: #00cc66;
+}
+
+.buryit {
+    float: right;
+    margin-left: 3px;
+    background-color: #8497B0;
+}
+
+.diggit:hover,
+.buryit:hover {
+    opacity: 1;
+}
+
+.diggnum,
+.burynum {
+    color: #fff;
+    font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, 'Segoe UI', 'Micrsoft YaHei', 微软雅黑, 'WenQuanYi Micro Hei', Tahoma, Arial, sans-serif;
+}
+
+.diggnum:before,
+.burynum:before {
+    position: absolute;
+    left: 22px;
+    font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, 'Segoe UI', 'Micrsoft YaHei', 微软雅黑, 'WenQuanYi Micro Hei', Tahoma, Arial, sans-serif;
+}
+
+.diggnum:before {
+    content: '▲';
+}
+
+.burynum:before {
+    content: '▼';
+}
+
+.diggword {
+    font-size: 12px;
+    text-align: center;
+    color: #fff !important;
+}
+
+.popup {
+    position: absolute;
+    display: none;
+    right: 60px;
+    top: 0;
+    padding: 0 14px;
+    line-height: 60px;
+    width: 100px;
+    color: #fff;
+    font-size: 14px;
+    /*				background: #00ae66;*/
+    background: #333;
+    white-space: nowrap;
+}
+
+.popup:after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -16px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border: solid 8px transparent;
+    background: transparent;
+    border-left-color: #333;
+}
+
+.keepfool-favorite {
+    background: url("http://images.cnblogs.com/cnblogs_com/keepfool/344216/r_favestar.png") no-repeat;
+}
+
+
+/* [10.代码高亮] */
+
+.hljs {
+    font-size: 0.9em;
+    margin-left: 4%;
+    margin-right: 4%;
+    max-height: 600px;
+    border: 1px solid #eee;
+    border-radius: 0.3em;
+}
+
+pre.code {
+    border-top: #ff9900 1px dashed;
+    border-right: #ff9900 1px dashed;
+    border-bottom: #ff9900 1px dashed;
+    border-left: #6ce26c 5px solid;
+    font-size: 12px;
+    font-family: Consolas;
+}
+
+.code-toolbar {
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    margin-left: 4%;
+    margin-right: 4%;
+    background: #36424a;
+    border-radius: 2px 2px 0 0;
+    padding: 6px;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.code-toolbar img {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    border: none !important;
+}
+
+.code-toolbar span {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: 20px;
+    line-height: 28px;
+}
+
+.code-toolbar a {
+    color: #fff;
+}
+
+.code-toolbar a:hover {
+    background: none;
+}
+
+
+/* [11.侧边栏] */
+
+#sideBar {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background: #fff;
+    /*box-shadow: rgba(0,0,0,0.1) 0 1px 1px;
+    border: 1px solid #E6E6FA;*/
+}
+
+#sideBar a {
+    color: #4183c4;
+}
+
+#sideBar a:hover {
+    color: #FF6347;
+}
+
+.blogStats {
+    color: #fff;
+}
+
+
+/* [12.广告区域] */
+
+#ad_t2,
+#ad_c1,
+#ad_c2,
+#under_post_kb,
+#under_post_news {
+    display: none;
+}
+
+
+/* [13.签名] */
+
+#MySignature p {
+    margin: 10px 0 10px 50px;
+    padding: 10px 10px 10px 140px;
+    border: 1px dashed orange;
+    color: orangered;
+    font-size: 13px;
+    background-color: ghostwhite;
+    background: url('http://files.cnblogs.com/files/keepfool/caution.gif') no-repeat;
+    background-position: 20px 5px;
+    background-size: 120px 120px;
+}
+
+#MySignature p span {
+    display: block;
+}
+
+#blog_post_info_block {
+    margin: 10px 0 10px 50px;
+}
+
+/* [14.小酌重构系列-文章头部的斜飘带] */
+
+.ribbon {
+    overflow: hidden;
+    /* top right corner */
+    position: absolute;
+    right: -5em;
+    top: 2.5em;
+    /* 45 deg rotation */
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.ribbon a {
+    display: block;
+    color: #eee !important;
+    text-decoration: none !important;
+    margin: 0.5em 0 1em 0;
+    padding: 1em 5.5em;
+    text-align: center;
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e85c33), to(#E74C3C));
+    background: -webkit-linear-gradient(top, #e85c33 0, #E74C3C 100%);
+    background: linear-gradient(to bottom, #e85c33 0, #E74C3C 100%);
+    -webkit-transition: opacity .15s ease-in-out;
+    transition: opacity .15s ease-in-out;
+}
+
+.ribbon a:hover {
+    color: #fff;
+    background: #36424a;
+    border: none;
+}
+
+/* [15.文章目录] */
+
+#toc {
+    display: none;
+    box-sizing: border-box;
+    width: 250px;
+    padding: 20px 15px;
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 4px;
+    background: #f4f7f8;
+}
+
+#toc.fixed {
+    position: fixed;
+    top: 100px;
+    left: 5px;
+    z-index: 10;
+}
+
+#toc h4 {
+    font-size: 14px;
+    color: #4d4e53;
+    margin: 0;
+}
+
+#toc ul {
+    margin: 0;
+    padding: 0;
+    border: none !important;
+}
+
+#toc li {
+    list-style-type: none !important;
+    padding-top: 2px;
+    font-size: 12px;
+}
+
+#toc li li {
+    padding-left: 20px;
+}
+
+#toc ul a {
+    text-decoration: none;
+    color: #0681EA;
+}
+
+#toc ul a:hover {
+    background: none;
+    text-decoration: underline;
+}
+
+#toc ul ul {
+    width: 100%;
+    padding: 0 12px;
+    margin: 0;
+}
+
+
+/* [16.iconfont] */
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_1465994175_1437306.eot');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/font_1465994175_1437306.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1465994175_1437306.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1465994175_1437306.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1465994175_1437306.svg#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zuoceshouqi:before {
+    content: "\e601";
+}
+
+.icon-zuocezhankai:before {
+    content: "\e602";
+}
+
+.icon-quoteleft:before {
+    content: "\e606";
+}
+
+.icon-quoteright:before {
+    content: "\e607";
+}
+
+.icon-q1:before {
+    content: "\e609";
+}
+
+.icon-q2:before {
+    content: "\e60a";
+}
+
+.icon-xianshi:before {
+    content: "\e608";
+}
+
+.icon-youcezhankai:before {
+    content: "\e603";
+}
+
+.icon-youceshouqi:before {
+    content: "\e604";
+}
+
+.icon-49:before {
+    content: "\e60d";
+}
+
+.icon-mulushouqi:before {
+    content: "\e610";
+}
+
+.icon-xianshi1:before {
+    content: "\e60e";
+}
+
+.icon-guanzhu:before {
+    content: "\e600";
+}
+
+.icon-muluzhankai:before {
+    content: "\e611";
+}

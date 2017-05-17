@@ -1,0 +1,678 @@
+/*public*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-width: 980px;
+    background-color: #eee;
+}
+a{
+    text-decoration: none;
+    font-family: "宋体","微软雅黑",sans-serif;
+    color:white;
+}
+a:hover{
+    color: #eaa;
+}
+/*header*/
+.header{
+    background-color: #522a5c;
+    height: 80px;
+    position: relative;
+}
+.icon-github{
+    position: absolute;
+    right:10px;
+    bottom:0;
+}
+.header-main{
+    width:980px;
+    height:100%;
+    margin:0 auto;
+    position: relative;/*使wrap与icon-github都是使用position定位，可以通过div出现的前后位置进行覆盖*/
+    background-color: inherit; /*wrap的颜色是透明的，覆盖不住icon-github，故需设置和背景一样的颜色进行覆盖*/
+
+}
+.logo{
+    position: absolute;
+    top:50px;
+    left:0;
+}
+.menu{
+    position: absolute;
+    top:50px;
+    right:0;
+}
+.menu li{
+    display: inline;
+    margin-left: 28px;
+}
+.menu li a{
+    font-size: 14px;
+}
+/*footer*/
+.footer{
+    background-color: black;
+}
+.footer a{
+    font-size: 12px;
+}
+.footer span{
+    display: block;
+    color: #fff;
+    font-size: 12px;
+}
+.footer-menu{
+    height:35px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+}
+.footer-menu li{
+    display: inline;
+    margin:0 14px;
+    line-height: 35px;
+}
+
+.footer-links{
+    width:980px;
+    height:300px;
+    margin:0 auto;
+}
+.links{
+    float: left;
+    width:20%;
+}
+.links span{
+    margin:40px 0 30px 0;
+}
+.links li{
+    margin-bottom: 5px;
+}
+.copyright{
+    text-align: center;
+}
+.copyright-img{
+    margin-top:20px;
+    height:34px;
+}
+/*index*/
+
+/*banner*/
+.banner{
+    height:550px;
+    background-image: url("../images/banner-bg.jpg");
+    background-size: 100% 100%;
+}
+.banner-main{
+    width:980px;
+    height:100%;
+    margin:0 auto;
+    position: relative;
+}
+.context{
+    width: 360px;
+    position: absolute;
+    right:0;
+    bottom: 0;
+    padding:10px 10px 30px 10px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0) 100%);
+}
+.context span{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom:12px;
+    text-align: right;
+}
+.context p{
+    text-indent: 24px;
+    line-height: 150%;
+    font-size: 12px;
+    color: #ffffff;
+}
+/*center*/
+.index-center{
+    width:980px;
+    margin: 10px auto 100px auto;
+    overflow: hidden;
+}
+.col{
+    float: left;
+    width:320px;
+    margin-right: 10px;
+    background-color: white;
+    padding-bottom:999px;/*使三个div的高度相同并且自适应*/
+    margin-bottom: -999px;
+}
+.clear_margin{
+    margin-right: 0;
+}
+.col-img{
+    width: 300px;
+    height:180px;
+    margin:10px 10px 15px 10px;
+}
+.col-img img{
+    width:300px;
+    height:180px;
+}
+.img-context{
+    padding: 0 30px 25px 30px;
+}
+.img-context p{
+    text-indent: 24px;
+    line-height: 170%;
+    font-size: 12px;
+}
+/*author*/
+.author{
+    height:400px;
+    background-color: white;
+    padding-top: 1px;/*使两个垂直外边距不要合并*/
+}
+.author-img{
+    width:160px;
+    height:160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin:-51px auto 50px auto;
+}
+.author-img img{
+    width:160px;
+    height:160px;
+}
+.author-intro{
+    width: 600px;
+    margin:0 auto;
+    font-family: "Century Gothic",sans-serif;
+}
+.author-intro span{
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.author-intro p{
+    text-indent: 28px;
+    line-height: 170%;
+    font-size: 14px;
+}
+/*blog*/
+
+/*blog-center*/
+.clear-float{/*使container高度被子div撑开*/
+    clear: both;
+}
+.container{
+    width:980px;
+    margin:20px auto 300px auto;
+}
+.center{
+    float: left;
+    width:710px;
+    margin-right: 10px;
+}
+.aside{
+    float: left;
+    width: 260px;
+}
+/*blog*/
+.blog{
+    padding: 20px 20px 15px 20px;
+    margin-bottom:10px;
+    position: relative;
+    background-color: white;
+}
+.blog-tag{
+    position: absolute;
+    left:-50px;
+}
+.blog-tag p{
+    display: block;
+    width: 50px;
+    height:40px;
+    color: #fff;
+    /*使字体垂直水平居中*/
+    text-align: center;
+    line-height: 40px;
+}
+.deep-purple{
+    background-color: #522a5c;
+}
+.light-purple{
+    background-color: #a660b7;
+}
+.title{
+    color: #a660b7;
+    font-size:16px;
+    line-height: 32px;
+    font-weight:bold;
+}
+.sub-title{
+    color: #666666;
+    font-size:12px;
+    font-weight:bold;
+}
+.text{
+    margin: 10px 0 30px 0;
+}
+.text p{
+    color: #000;
+    font-size:12px;
+    text-indent: 24px;
+    line-height: 170%;
+}
+.blog-author{
+    text-align: right;
+    color: #999;
+    font-size:12px;
+}
+/*number-list*/
+.number-list{
+    text-align: center;
+}
+.number-list li{
+    display: inline-block;
+    height:40px;
+    line-height: 40px;
+    background-color: white;
+    padding:0 15px;
+}
+.number-list a{
+    color: black;
+    font-size:12px;
+}
+.number-list li:hover ,.number-list li:hover a{/*使鼠标覆盖之后呈现加粗的紫色底白字*/
+    font-weight: bold;
+    color: #fff;
+    background-color:#a660b7;
+}
+.disabled{
+    pointer-events: none;/*使鼠标处于无法点击状态*/
+}
+
+.disabled a{
+    color: darkgrey;
+}
+
+/*blog-aside*/
+.search{
+    background-color: white;
+    padding: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+#input-search {
+    float: left;
+    border: solid 1px #ddd;
+    color: #ddd;
+    width:118px;
+    padding:12px 0 12px 50px;
+    background:url("../images/search.gif") no-repeat 8px ;
+}
+#input-button {
+    float: left;
+    width:50px;
+    height:41px;
+    border: solid 1px #ddd;
+    font-size: 24px;
+    color: #fff;
+}
+
+.blog-submenu li{
+    list-style: none;
+    height:50px;
+    line-height: 50px;
+    padding-left: 20px;
+    border-bottom: solid 1px #ddd;
+    border-left: solid 5px #dfc6e6;
+    background-color: white;
+}
+.blog-submenu li:hover{
+    border-left:solid 5px #522a5c;
+}
+.blog-submenu li a{
+    color: #666666;
+}
+
+/*blog-calendar*/
+.blog-calendar{
+    background-color: white;
+    padding:20px 20px 25px 20px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+.calendar-month li{
+    list-style: none;
+    float: left;
+    height:20px;
+    line-height: 20px;
+    padding: 0 15px;
+}
+.calendar-month li a{
+    color: #773c88;
+    font-size:12px;
+    font-weight: bold;
+}
+#month{
+    padding:0 51px;
+}
+.calendar-data{
+    padding: 0 15px;
+    overflow: hidden;
+    border-bottom: solid 1px #ddd;
+}
+.calendar-data li{
+    list-style: none;
+    float: left;
+    height:20px;
+    line-height: 20px;
+    width:21px;
+    text-align: center;
+    margin: 7px 3px ;
+}
+.calendar-data li a{
+    color: #999;
+    font-size:12px;
+}
+.calendar-data li:hover{
+    background-color: #773c88;
+}
+
+/*tags*/
+.tags{
+    background-color: white;
+    padding: 10px 20px 30px 15px;
+    color: #773c88;
+}
+.tags-header{
+    display: block;
+    color: #666666;
+    height: 20px;
+    line-height: 20px;
+    padding-bottom: 15px;
+}
+.tags-30px{
+    font-size: 30px;
+    font-weight: 500;
+    padding-right: 8px;
+}
+.tags-20px{
+    font-size: 20px;
+    font-weight: 500;
+}
+.tags-10px{
+    font-size: 10px;
+}
+.tags-14px{
+    font-size: 14px;
+}
+
+/*gallery*/
+.gallery-tab,.gallery-container{
+    overflow: hidden;
+    font-family: "宋体","微软雅黑",sans-serif;
+}
+.gallery-tab li{
+    background-color: white;
+    float: left;
+    list-style: none;
+    padding:15px 20px 20px 20px;
+    border-right: solid 2px #eeeeee;
+    border-bottom: solid 2px #eeeeee;
+    cursor: pointer;
+}
+.gallery-tab a{
+    font-size: 14px;
+    color: black;
+}
+.tab1{
+    border-top: solid 5px #dfc6e6;
+}
+.tab2 {
+    border-top: solid 5px #522a5c;
+}
+.tab3 {
+    border-top: solid 5px #5900b2;
+}
+.tab4{
+    border-top: solid 5px #8c2300;
+}
+.tab5{
+    border-top: solid 5px #d9a300;
+}
+.gallery-tab li:hover{
+    border-bottom-color: white;/*设置为border-bottom：none没有反应，只能设置为背景色*/
+}
+/*center*/
+.gallery{
+    background-color: white;
+    margin-bottom: 10px;
+    padding:20px 20px 30px 20px;
+    overflow: hidden;
+    color: white;
+    font-size: 14px;
+}
+.gallery-left{
+    width: 330px;
+    float: left;
+    margin-right: 10px;
+}
+.gallery-right{
+    width: 330px;
+    float: left;
+}
+.big-img{
+    width:330px;/*没有设置div的宽高时，div自动的高度与图片之间只有5px的高度差*/
+    height:150px;
+}
+.small-img{
+    width: 160px;
+    height: 100px;
+}
+.big-img-text,.small-img-text{
+    padding: 10px 10px 20px 10px;
+    margin-bottom: 10px;
+}
+.pic-code{
+    float: left;
+    border: solid 1px white;
+    width: 25px;/*用padding的时候边框不能变成圆的，始终是椭圆*/
+    height: 25px;
+    text-align: center;/*让文字水平垂直居中*/
+    line-height: 25px;
+    border-radius:100%;/*边框属性为圆形*/
+}
+.pic-title{
+    margin-left: 45px;
+}
+.pic-content{
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 150%;
+    margin-left: 45px;
+}
+
+.part-branch-left{
+    float: left;
+    width:160px;
+    margin-right: 10px;
+}
+.part-branch-right{
+    float: left;
+    width:160px;
+}
+.styleJ{
+    background-color: #522a5c;
+}
+.styleA{
+    background-color: #d9a300;
+}
+.styleF{
+    background-color: #8c2300;
+}
+.styleU{
+    background-color: #5900b2;
+}
+
+
+/*More*/
+.click-more{
+    height:50px;
+    background-color: white;
+    line-height:50px;
+    text-align: center;
+
+}
+.more{
+    height:50px;
+    display: block;
+    background: url("../images/more.jpg") no-repeat  310px center;
+}
+.more a{
+    color: #666;
+    font-size: 12px;
+    margin-left: 40px;
+}
+
+/*ranking*/
+.ranking{
+    background-color: white;
+    padding: 20px 0px 30px 15px;
+}
+.ranking p{
+    padding-bottom: 20px;
+}
+.ranking li{
+    list-style: none;
+    padding-bottom: 15px;
+}
+.ranking-number{
+    float: left;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    font-size: 12px;
+    color: #fff;
+    border: solid 1px #7d5f84;
+    border-radius: 100%;
+    background-color: #7d5f84;
+    margin-right:10px ;
+}
+.ranking-bar{
+    float: left;
+    width: 102px;
+    height: 18px;
+    margin-right: 10px;
+}
+.bar-1{
+    background: url("../images/bar-1.jpg") no-repeat;
+}
+.bar-2{
+    background: url("../images/bar-2.jpg") no-repeat;
+}
+.bar-3{
+    background: url("../images/bar-3.gif") no-repeat;
+}
+.bar-4{
+    background: url("../images/bar-4.gif") no-repeat;
+}
+.bar-5{
+    background: url("../images/bar-5.jpg") no-repeat;
+}
+
+
+/*about*/
+.about-center{
+    width: 980px;
+    margin: 100px auto 20px auto;
+    position: relative;
+    font-family: "宋体","微软雅黑",sans-serif;
+}
+.about-left{
+    float: left;
+    width: 90px;
+    height:1200px;
+    background-color: white;
+    margin-right: 6px;
+    padding: 0 77px 0 320px;
+    text-align: right;
+    font-size: 20px;
+}
+.about-right{
+    float: left;
+    width: 315px;
+    height:1200px;
+    background-color: white;
+    padding: 0 147px 0 25px;
+    font-size: 14px;
+    line-height: 170%;
+}
+.author-name{
+    padding: 130px 0 240px 0;
+}
+.edu-experience{
+    padding: 210px 0 310px 0;
+}
+.introduce{
+    text-indent: 28px;
+    padding: 130px 0 145px 0;
+}
+.intro1{
+    padding: 156px 0 0 30px;
+    position: relative;
+}
+.intro2{
+    padding: 50px 0 0 30px;
+    position: relative;
+}
+.intro3{
+    padding: 30px 0 0 30px;
+    position: relative;
+}
+
+.edu-time,.job-time{
+    padding: 1px 15px;
+    border:solid 5px #eee;
+    border-radius: 20%;
+    color: #666;
+    position: absolute;
+    left:-61px;
+    background-color: white;
+}
+.about-right span{
+    font-size: 12px;
+}
+
+
+.timeline{
+    width: 180px;
+    position: absolute;
+    top:-60px;
+    left: 400px;
+}
+.about-author-img{
+    width:160px;
+    height:160px;
+    border:solid 10px #eee;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.img-setting{
+    border:solid 5px #eee;
+    border-radius: 50%;
+    overflow: hidden;
+    width:80px;
+    height:80px;
+}
+.tel-img{
+    margin: 170px auto 140px auto;
+}
+.edu-img{
+    margin: 0 auto;
+}
+.job-img{
+    margin: 240px auto 240px auto;
+}

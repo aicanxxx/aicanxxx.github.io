@@ -5,16 +5,24 @@
     <title>Title</title>
 </head>
 <body>
+<div>
+
+</div>
+<a href="http://www.cnblogs.com/aicanxxx/">艾新觉罗</a>
 <script>
-    function Shape(name){
-        this.name=name;
-        if(typeof this.getName !="function"){
-            Shape.prototype.getName=function(){
-                alert(this.name);
-            }
-        }
+    function Shape(){
+        this.name='Shape';
     }
-    var twoDShape=new Shape('2D Shape');
+    Shape.prototype.getName =function(){
+        alert(this.name);
+    }
+    function twoDShape(){
+        this.name='2D Shape';
+    }
+    twoDShape.prototype=Shape.prototype;
+    var myshape=new twoDShape();
+    myshape.getName();//2D Shape	
+    /*var twoDShape=new Shape('');
     var triangle=new Shape('Triangle');
     twoDShape.getName();//2D Shape
     triangle.getName();//Triangle
@@ -70,7 +78,7 @@
         }
     }
     tetrisGame.curCoordinate=new I();
-    tetrisGame.curCoordinate.change();
+    tetrisGame.curCoordinate.change();*/
 </script>
 </body>
 </html>

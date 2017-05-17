@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>三列布局</title>
+    <style>
+        #div{
+            margin-left:100px;
+            margin-right:100px;
+            position:relative;
+        }
+        .diva{
+            width:100px;
+            height:50px;
+            background-color:red;
+            position:absolute;
+            left:-100px;
+        }
+        .divc{
+            width:100px;
+            height:50px;
+            background-color:blue;
+            position:absolute;
+            right:-100px;
+        }
+        .divb{
+            width:100%;
+            height:50px;
+            background-color:grey;
+            position:absolute;
+        }
+        #div1{
+            margin-left:100px;
+            margin-right:100px;
+        }
+        .diva1{
+            width:100px;
+            height:50px;
+            background-color:red;
+            float: left;
+            margin-left: -100px;
+        }
+        .divc1{
+            width:100px;
+            height:50px;
+            background-color:blue;
+            float: left;
+            margin-right: -100px;
+        }
+        .divb1{
+            width:100%;
+            height:50px;
+            background-color:grey;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<p>用position绝对定位的方法</p>
+<div id="div">
+    <div class="diva">DIV-A</div>
+    <div class="divb">DIV-B</div>
+    <div class="divc">DIV-C</div>
+</div>
+<br/>
+<br/>
+<p>用float浮动的方法</p>
+<div id="div1">
+    <div class="diva1">DIV-A</div>
+    <div class="divb1">DIV-B</div>
+    <div class="divc1">DIV-C</div>
+</div>
+</body>
+</html>
