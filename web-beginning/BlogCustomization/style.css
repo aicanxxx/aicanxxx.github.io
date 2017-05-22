@@ -390,9 +390,9 @@ a:hover{
 #EntryTag a:link,
 #EntryTag a:visited,
 #EntryTag a:active,
-#BlogPostCategory a:link,
-#BlogPostCategory a:visited,
-#BlogPostCategory a:active {
+#mainContent .forFlow #BlogPostCategory a:link,
+#mainContent .forFlow #BlogPostCategory a:visited,
+#mainContent .forFlow #BlogPostCategory a:active{
     display: inline-block;
     padding: .25em .5em;
     margin: 0 3px;
@@ -403,7 +403,7 @@ a:hover{
     background: linear-gradient(to bottom, #a660b7 0, #5e057f 100%);
     border-radius: 4px;
 }
-#EntryTag a:hover
+#EntryTag a:hover,
 #BlogPostCategory a:hover {
     background: #e66e33;;
 }
