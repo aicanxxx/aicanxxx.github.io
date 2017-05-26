@@ -6,16 +6,89 @@
 </head>
 <body>
 <div id="app">
-<filedset>
+<fieldset>
     <legend>Created New Person</legend>
     <div class="group-form">
         <label>Name:</label>
-        <input type="text">
+        <input type="text" v-model="newPerson.name">
     </div>
-</filedset>
+    <div class="group-form">
+        <label>Age:</label>
+        <input type="text" v-model="newPerson.age">
+    </div>
+    <div class="group-form">
+        <label>Sex:</label>
+        <select v-model="newPerson.sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="group-form">
+        <label></label>
+        <button v-on:click="createPerson">Create</button>
+    </div>
+</fieldset>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="p in people">
+                <td>{{p.name}}</td>
+                <td>{{p.age}}</td>
+                <td>{{p.sex}}</td>
+                <td v-bind:class="'text-center'"><button v-on:click="deletePerson($index)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<script src="https://unpkg.com/vue/dist/vue.js">
-
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:app,
+        data:{
+            newPerson:{
+                name:'',
+                age:0,
+                sex:'Male'
+            },
+            people:[{
+                name:'jack',
+                age:30,
+                sex:'Male'
+            },{
+                name:'Bill',
+                age:26,
+                sex:'Male'
+            },{
+                name:'Annd',
+                age:22,
+                sex:'Female'
+            },{
+                name:'Ali',
+                age:36,
+                sex:'Male'
+            }]
+        },
+        methods:{
+            createPerson:function(){
+                this.people.push(this.newPerson);
+                this.newPerson={
+                    name:'',
+                    age:0,
+                    sex:'Male'
+                }
+            },
+            deletePerson: function (index) {
+                this.people.splice(index,1);
+            }
+        }
+    })
 </script>
 
 </body>
