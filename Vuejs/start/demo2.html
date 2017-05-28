@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:simple-grid="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div id="searchBar">
+        Search:<input type="text" v-model="searchQuery">
+    </div>
+    <simple-grid :data='gridData' :columns="gridColumns" :filter-key="searchQuery"></simple-grid>
+</div>
+<template id="grid-template">
+    <table>
+        <thead>
+        <tr>
+            <th v-for="col in columns">{{col | capitalize}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="entry in filterBy">
+            <td v-for="col in columns">{{entry[col]}}</td>
+        </tr>
+        </tbody>
+    </table>
+</template>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+
+    Vue.component('simple-grid',{
+        template:'#grid-template',
+        props:{
+            data:Array,
+            columns:Array,
+            filterKey:String
+        },
+        filters:{
+            capitalize:function(value){
+                return value.charAt(0).toUpperCase()+value.slice(1);
+            }
+        },
+        computed:{
+            filterBy:function(){
+                var self=this;
+                return this.data.filter(function (value){
+                    return value.name.toLowerCase().indexOf(self.filterKey.toLowerCase())!==-1;
+                })
+            }
+        }
+    })
+    var demo=new Vue({
+        el:'#app',
+        data:{
+            searchQuery:'',
+            gridColumns:['name','age','sex'],
+            gridData:[{
+                name:'jack',
+                age:30,
+                sex:'Male'
+            },{
+                name:'Bill',
+                age:26,
+                sex:'Male'
+            },{
+                name:'Annd',
+                age:22,
+                sex:'Female'
+            },{
+                name:'Ali',
+                age:36,
+                sex:'Male'
+            }]
+        }
+    })
+</script>
+</html>
