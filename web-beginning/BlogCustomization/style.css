@@ -333,13 +333,10 @@ a:hover{
     color: #5e057f;
     display: block;
     font-size: 1.7em;
-    /*padding: 0.2em 0.5em;*/
     padding: 20px 0;
     margin: 15px 0 15px 5px;
     position: relative;
     border-bottom: 1px solid #e2e3e4;
-    /*background: #2C3E50;
-    border-radius: 4px;*/
 }
 
 #cnblogs_post_body h2 {
@@ -353,11 +350,27 @@ a:hover{
     color: #5e057f;
     font-size: 1.3em;
     font-weight: normal;
-    /*padding: 15px 20px;*/
     padding: 20px 0;
     margin: 5px 0 5px 5px;
 }
-
+#cnblogs_post_body h4 {
+    color: #5e057f;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin: 5px 0 5px 5px;
+}
+#cnblogs_post_body h5 {
+    color: #5e057f;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin: 5px 0 5px 5px;
+}
+#cnblogs_post_body h6 {
+    color: #5e057f;
+    font-size: 0.7em;
+    font-weight: normal;
+    margin: 5px 0 5px 5px;
+}
 #cnblogs_post_body p {
     margin: 10px 10px 10px 30px;
 }
