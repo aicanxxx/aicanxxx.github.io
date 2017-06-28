@@ -7,9 +7,18 @@
 <div id="div1">div1</div>
 <body>
 <script type="text/javascript">
-
-
-    document.getElementById('div1').onclick = function(){
+    Object.prototype.x=10;
+    function a() {
+        var x=30;
+        var y=20;
+        function b(p,q) {
+            var z=10;
+            console.log(p+q);
+        }
+        b(w,y)
+    }
+    a();
+    /*document.getElementById('div1').onclick = function(){
         console.log(this); //div1
         function func(){
             console.log(this); //undefined
@@ -19,7 +28,7 @@
     func();
 
 
-    /* function f(param){
+     function f(param){
         var n=function(){
             alert(3);
             return param;

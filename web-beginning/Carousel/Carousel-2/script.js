@@ -12,27 +12,15 @@ function addLoadEvent(func){
         }
     }
 }
-function fadeIn(elem){
+
+function moveImg(list,index) {
     for(var i=0;i<list.length;i++){
-        setOpacity(list[i],0); //初始全透明
+        if(list[i].className=='opa-on'){//清除li的透明度样式
+            list[i].className='';
+        }
     }
-    for(var i=0;i<5;i++){//透明度5次渐进
-        (function(i){
-            setTimeout(function(){
-                setOpacity(elem,20*i);
-            },i*100);
-        } )(i)
-    }
-
+    list[index].className='opa-on';
 }
-function setOpacity(elem, level) {    //设置透明度
-    if (elem.filters) {//兼容IE浏览器
-        elem.style.filter = "alpha(opacity=" + level + ")";
-    } else {
-        elem.style.opacity = level / 100;
-    }
-}
-
 function moveIndex(list,num){//移动小圆圈
     for(var i=0;i<list.length;i++){
         if(list[i].className=='on'){//清除li的背景样式
@@ -54,7 +42,7 @@ function main(){
             var clickIndex=parseInt(this.index);
             index=clickIndex;
 
-            fadeIn(imgList[index]);
+            moveImg(imgList,index);
             moveIndex(list,index);
             clearInterval(timer);
         };
@@ -63,16 +51,13 @@ function main(){
         };
 
     }
-    //没有将nextMove、play写成函数形式，是因为index是个全局变量，需要对其进行赋值无法传递
-    var nextMove=function(){//一直向右移动，最后一个之后返回
+
+    var nextMove=function(){
         index+=1;
         if(index>=5){
             index=0
         }
-        for(var i=0;i<imgList.length;i++){
-            setOpacity(imgList[i],0); //初始全透明
-        }
-        fadeIn(imgList[index]);
+        moveImg(imgList,index);
         moveIndex(list,index);
     };
     var play=function(){
@@ -84,3 +69,4 @@ function main(){
 }
 
 addLoadEvent(main);
+

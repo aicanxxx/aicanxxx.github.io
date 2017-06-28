@@ -30,13 +30,14 @@ nav{
 #img li{
     width: 720px;
     height: 405px;
-    position: absolute;/*与从左向右滑动的区别*/
-    opacity: 0;
+    position: absolute;/*必须设置为absolute，否则第一个li会把后面的都覆盖*/
     z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 #index .on{
     background-color: black;
 }
-#img .on{
+#img .opa-on{
     opacity: 1;
 }
