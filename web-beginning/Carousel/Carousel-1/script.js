@@ -13,6 +13,7 @@ function addLoadEvent(func){
     }
 }
 function moveElement(ele,x_final,y_final,interval){//移动图片元素
+
     var x_pos=ele.offsetLeft;
     var y_pos=ele.offsetTop;
     var dist=0;
