@@ -2,14 +2,17 @@
     padding: 0;
     margin: 0;
 }
-
-#img{
+nav {
     width: 720px;
-    height:405px;/*设置可见部分的高度*/
+    height: 405px; /*设置可见部分的高度*/
     margin: 40px auto;
     border: 5px solid #eee;
-    position: relative;/*默认是static*/
     overflow: hidden;
+}
+#img{
+    width: 720px;
+    height:2430px;/*设置可见部分的高度*/
+    position: relative;/*默认是static*/
 }
 #img li{
     width: 720px;

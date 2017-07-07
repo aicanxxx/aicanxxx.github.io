@@ -5,8 +5,7 @@
 //向右滚动
 window.onload=function () {
     var nav=document.getElementsByTagName('nav')[0];
-    var img=document.getElementById('img');
-    var list=img.getElementsByTagName('li');
+    var list=document.getElementById('img').getElementsByTagName('li');
     function scroll() {
         if(nav.scrollLeft==0){
             nav.scrollLeft=list[list.length-1].offsetLeft;

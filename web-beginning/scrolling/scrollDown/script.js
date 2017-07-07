@@ -4,21 +4,21 @@
 
 //往下滚动
 window.onload=function () {
-    var img=document.getElementById('img');
-    var list=img.getElementsByTagName('li');
+    var nav=document.getElementsByTagName('nav')[0];
+    var list=document.getElementById('img').getElementsByTagName('li');
     function scroll() {
-        if(img.scrollTop==0){
-            img.scrollTop=list[list.length-1].offsetTop;
+        if(nav.scrollTop==0){
+            nav.scrollTop=list[list.length-1].offsetTop;
         }else{
-            img.scrollTop--;
+            nav.scrollTop--;
         }
     }
     var timer= setInterval(scroll,10);
 
-    img.onmouseover=function(){
+    nav.onmouseover=function(){
         clearInterval(timer);
     };
-    img.onmouseout=function () {
+    nav.onmouseout=function () {
         timer=setInterval(scroll,10);//必须得对timer重新赋值
     }
 };
