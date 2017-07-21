@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <label for="M">M</label><input type="checkbox" id="M" v-model="size.M">
+    <label for="L">L</label><input type="checkbox" id="L" v-model="size.L">
+    <label for="XL">XL</label><input type="checkbox" id="XL" v-model="size.XL">
+    <label for="mail">包邮</label><input type="checkbox" id="mail" v-model="size.mail" v-bind:true-value="'包邮'" v-bind:false-value="'不包邮'">
+    <br>
+    {{size | json}}
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            size:{
+                M:false,
+                L:false,
+                XL:false,
+                mail:'包邮'
+            }
+        }
+    })
+</script>
+</body>
+</html>

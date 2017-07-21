@@ -1,24 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<div id="div1">div1</div>
+
+<!doctype html>
+<title>javascript无缝滚动  by 司徒正美</title>
+<meta charset="utf-8"/>
+<meta name="keywords" content="javascript无缝滚动 by 司徒正美" />
+<meta name="description" content="javascript无缝滚动  by 司徒正美" />
+<script src="jquery-3.0.0.js"></script>
 <body>
+<div>
+    <h3 class="title"><a href="http://www.yingjiesheng.com/job-002-662-332.html
+
+    " target="_blank">[全国]阿里巴巴（中国）有限公司<em>2018</em><em>校园招聘</em></a></h3><!--10.4741401672 -->
+    
+    职位简介：...成长制度，将你载上一条快速路；
+    阿里文化，让你体验快乐工作、认真生活
+    ……
+    &nbsp;
+    对你味，给你way！
+    阿里<em>2018</em><em>校园招聘</em>，等你来！
+    &nbsp;
+    阿里<em>2018</em>校招详情：&nbsp;面向人群：<em>2018</em>届毕业生（毕业时间:<em>2018</em>.1.1-<em>2018</em>.12.31）&nbsp;招聘职位：技术、产品、运营、UED等众多职位等你来！(详见校招官网)&nbsp;招聘流程：网申→测评→笔试→面试→发放录用意向书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;??内推→完善简历→测...<br />
+    <p><span class="r date" title="发布日期">2017-07-17</span>
+        信息来源：武汉理工大学 | 全职 | 其他
+    </p>
+</div>
+<div>
+    <h3 class="title"><a href="http://www.yingjiesheng.com/job-002-662-332.html
+
+    " target="_blank">[全国]阿里巴巴（中国）有限公司<em>2018</em><em>校园招聘</em></a></h3><!--10.4741401672 -->
+    
+    职位简介：...成长制度，将你载上一条快速路；
+    阿里文化，让你体验快乐工作、认真生活
+    ……
+    &nbsp;
+    对你味，给你way！
+    阿里<em>2018</em><em>校园招聘</em>，等你来！
+    &nbsp;
+    阿里<em>2018</em>校招详情：&nbsp;面向人群：<em>2018</em>届毕业生（毕业时间:<em>2018</em>.1.1-<em>2018</em>.12.31）&nbsp;招聘职位：技术、产品、运营、UED等众多职位等你来！(详见校招官网)&nbsp;招聘流程：网申→测评→笔试→面试→发放录用意向书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;??内推→完善简历→测...<br />
+    <p><span class="r date" title="发布日期">2017-07-17</span>
+        信息来源：武汉理工大学 | 全职 | 其他
+    </p>
+</div>
+</body>
 <script type="text/javascript">
-    Object.prototype.x=10;
-    function a() {
-        var x=30;
-        var y=20;
-        function b(p,q) {
-            var z=10;
-            console.log(p+q);
-        }
-        b(w,y)
-    }
-    a();
-    /*document.getElementById('div1').onclick = function(){
+    let infos = {
+        title: [],
+        links: [],
+        desc: [],
+        date: [],
+        from: []
+    };
+    
+    //$=jQuery.load(html);
+    let $title = $('h3.title a');
+    //let $links=$('.title a');
+    let $desc = $('div');
+    let html=$desc.html();
+    html=html.replace(/<em>|<\/em>|&nbsp;|<br>|\?|\n/g,'');
+    console.log(html)
+    let $date = $('ul.searchResult p span.date');
+    let $from = $date;
+    
+    console.log($($));
+    //注意：cheerio中遍历时参数为index，value，array,而js中遍历参数为value，index，array，不能弄错
+    $title.each((index, item) => {
+        infos.title.push($(item).text());
+        infos.links.push($(item).attr('href'));
+    });
+    
+    $desc.each((index, item) => {
+        $(item.childNodes).each((i,val)=>{
+            if(val.nodeType==3){
+                //infos.desc.push($(val).text());
+                //console.log(val);
+            }
+        })
+        /*$('h3.title').remove()
+        console.log(item);
+        item.remove($());
+        item.remove($('div p'));
+        console.log(item);*/
+    });
+    $date.each((index, item) => {
+        infos.date.push($(item).text());
+    });
+    $from.each((index, item) => {
+        infos.from.push($(item).text().trim())
+    });
+
+
+/*document.getElementById('div1').onclick = function(){
         console.log(this); //div1
         function func(){
             console.log(this); //undefined
@@ -127,5 +197,4 @@ var obj1=new function (){
 
 </script>
 
-</body>
 </html>

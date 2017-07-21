@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    *{
+        padding: 0;
+        margin:0;
+    }
+    #app{
+        width:800px;
+        height: 500px;
+        margin:100px auto;
+        border:1px solid #ccc;
+        box-shadow:2px 2px #ccc;
+        padding-top: 80px;
+    }
+    label{
+        margin-left: 150px;
+    }
+    input{
+        padding: 10px;
+        margin-left: 10px;
+        width:300px;
+    }
+    ul{
+        margin-left: 212px;
+        margin-top: -1px;
+        border: 1px solid #ccc;
+        width: 302px;
+        padding: 4px 10px;
+    }
+    li{
+        list-style: none;
+        line-height: 30px;
+    }
+</style>
+<body>
+<div id="app">
+    <label for="login">账户名</label>
+    <input type="text" id="login" v-model="msg" placeholder="请输入电子邮箱">
+    <ul v-if="msg">
+        <li v-for="item in filterBy">{{dealMsg(msg)}}@{{item}}</li>
+    </ul>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:'',
+            mail:['qq.com','163.com','126.com','189.cn','sina.com','hotmail.com','gmail.com']
+        },
+        computed:{
+            filterBy:function(){
+                var self=this;
+                return this.mail.filter(function(item){
+                    var index=self.msg.indexOf('@');
+                    if(index==-1){
+                        return true;
+                    }else{
+                        var key=self.msg.slice(index+1);
+                        //if(item.indexOf(key)==0){
+                        return item.indexOf(self.msg.slice(index+1))==0;//
+                        //}
+
+                    }
+                });
+            }
+        },
+        methods:{
+            dealMsg:function(){
+                return this.msg.slice(0,this.msg.indexOf('@')==-1?this.msg.length:this.msg.indexOf('@'));
+            }
+             /*dealMsg:function(val){
+                return val.slice(0,val.indexOf('@')==-1?val.length:val.indexOf('@'));
+            }*/
+        }
+    })
+</script>
+</body>
+</html>

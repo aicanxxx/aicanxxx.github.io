@@ -1,0 +1,66 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #app{
+            float: left;
+            margin: 30px;
+            text-align: center;
+            font-size: 12px;
+        }
+        ul{
+            display: none;
+        }
+        span{
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            width: 80px;
+            background: #eee;
+        }
+        li{
+            list-style: none;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid orange;
+            border-top: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+    <body>
+    <div id="app">
+        <span  v-on:mouseover="display" v-on:mouseout="hiddle">博客</span>
+        <ul v-bind:class="{show:cls}">
+            <li>博客评论</li>
+            <li>未读提醒</li>
+        </ul>
+    </div>
+    </body>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:'#app',
+            data:{
+                cls:false
+            },
+            methods:{
+                display:function(){
+                    this.cls=true;
+                },
+                hiddle:function(){
+                    this.cls=false;
+                }
+            }
+        })
+    </script>
+    </html>
