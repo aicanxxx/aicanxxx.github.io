@@ -54,13 +54,12 @@
     let $title = $('h3.title a');
     //let $links=$('.title a');
     let $desc = $('div');
-    let html=$desc.html();
-    html=html.replace(/<em>|<\/em>|&nbsp;|<br>|\?|\n/g,'');
-    console.log(html)
+    console.log($title.html());
+    //html=html.replace(/<em>|<\/em>|&nbsp;|<br>|\?|\n/g,'');
+    //console.log(html);
     let $date = $('ul.searchResult p span.date');
     let $from = $date;
     
-    console.log($($));
     //注意：cheerio中遍历时参数为index，value，array,而js中遍历参数为value，index，array，不能弄错
     $title.each((index, item) => {
         infos.title.push($(item).text());
